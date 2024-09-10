@@ -1,0 +1,17 @@
+.dotted-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: -1;
+}
+
+.dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: rgb(170,170,170);
+  border-radius: 50%;
+}

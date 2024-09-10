@@ -1,6 +1,7 @@
 import React from 'react';
 import './titlePage.css';
 
+// import DottedGraphBackground from './DottedGraph';
 import titlePageSchematic from '../images/title-page-schematic.png';
 import maltaBoard from '../images/malta-board.png'
 

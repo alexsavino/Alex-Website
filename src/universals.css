@@ -3,15 +3,16 @@
 
 
 :root {
-    /* FONTS */
-    --font-computer: 'Mohave', sans-serif;
-    /* --font-computer-ls: -0.03em; */
-    --font-script: 'Newsreader', serif;
+  /* FONTS */
+  --font-computer: 'Mohave', sans-serif;
+  /* --font-computer-ls: -0.03em; */
+  --font-script: 'Newsreader', serif;
 
-    /* COLORS */
-    --my-red: #CE2C1E;
-    --my-yellow: #DDCA56;
-    --my-green: #387F77;
-    --my-blue: #4AA3EA;
-    --my-beige: #DFDBC6;
+  /* COLORS */
+  --my-red: #CE2C1E;
+  --my-yellow: #DDCA56;
+  --my-green: #387F77;
+  --my-blue: #4AA3EA;
+  --my-beige: #DFDBC6;
+  --my-grey: #E6E6E6;
 }

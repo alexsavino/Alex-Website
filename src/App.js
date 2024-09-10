@@ -3,15 +3,19 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import DottedBackground from './dottedGraph'; 
 import TitlePage from './pages/titlePage';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<TitlePage />} />
-      </Routes>
-    </Router>
+    <div>
+      <DottedBackground /> {/* Directly render the DottedBackground */}
+    </div>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<TitlePage />} />
+    //   </Routes>
+    // </Router>
   );
 }
 
