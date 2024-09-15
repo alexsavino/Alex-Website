@@ -1,6 +1,6 @@
 // DottedBackground.js
 import React, { useState, useEffect } from 'react';
-import './dottedGraph.css';
+import './DottedGraph.css';
 
 // Even if youre not clicked onto the screen but it’s in your view?
 // Null when your mouse leaves the screen?
@@ -21,7 +21,7 @@ const DottedBackground = () => {
       setViewportWidth(window.innerWidth);
       setViewportHeight(window.innerHeight);
     };
-
+ 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
 
@@ -35,7 +35,7 @@ const DottedBackground = () => {
 
   const generateDots = () => {
     const dots = [];
-    const spacing = 25;
+    const spacing = 15;
     const width = viewportWidth + 100;
     const height = viewportHeight + 100;
 
@@ -65,7 +65,7 @@ const DottedBackground = () => {
     return 1 - fadeFactor;
   };
 
-  return <div className="dotted-grid">{generateDots()}</div>;
+  return <div className="dotted-graph">{generateDots()}</div>;
 };
 
 export default DottedBackground;

@@ -1,24 +1,27 @@
 import React from 'react';
-// import './App.css';
+import './App.css';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import DottedBackground from './dottedGraph'; 
-import TitlePage from './pages/titlePage';
+import DottedBackground from './DottedGraph'; 
+import TitlePage from './pages/TitlePage';
 
 const App = () => {
-  return (
-    <div>
-      <DottedBackground /> {/* Directly render the DottedBackground */}
-    </div>
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<TitlePage />} />
-    //   </Routes>
-    // </Router>
-  );
-}
 
+  return (
+    
+    <div className="app-container">
+      <DottedBackground />
+      <Router>
+        <Routes>
+          <Route path="/" element={<TitlePage />} />
+        </Routes>
+      </Router>
+    </div>
+    
+  );
+
+};
 
 export default App;
 

@@ -6,18 +6,54 @@
 } */
 @import '../universals.css';
 
+
 /****** LARGER CONTAINERS ******/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: purple;
+}
+
+
 .rightSideContainer {
-  position: absolute;
+  /* position: absolute; */
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  /* background-color: purple; */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
+
+
+
+
+
+/****** RED RECTANGLE CIRCUIT ******/
+.redContainer {
+  position: relative;
+  width: 569px;
+  height: 548px;
+}
+
+.circuitRedRectangle {
+  position: absolute;
+  width: 393px;
+  height: 527px;
+  background-color: var(--my-red);
+  border-radius: 10px;
+}
+  
+.circuitSchematicPNG {
+  position: absolute;
+  top: 8px;
+  left: -10px;
+  width: 583px;
+  height: 550px;
+}
+
+
+
 
 
 /****** INTRODUCTORY TEXT ******/
@@ -89,6 +125,7 @@
   color: black; 
 
   text-align: center;
+  line-height: 40px;
 
   /* transition: background-color 0.3s;
   cursor: pointer; */
@@ -126,30 +163,4 @@
   left: -20px;
   width: 340px;
   height: 420px;
-}
-
-
-
-/****** RED RECTANGLE CIRCUIT ******/
-.redContainer {
-  position: absolute;
-  width: 569px;
-  height: 548px;
-  /* background-color: purple; */
-}
-
-.circuitRedRectangle {
-  position: absolute;
-  width: 393px;
-  height: 527px;
-  background-color: var(--my-red);
-  border-radius: 10px;
-}
-  
-.circuitSchematicPNG {
-  position: absolute;
-  top: 8px;
-  left: -10px;
-  width: 583px;
-  height: 550px;
 }
