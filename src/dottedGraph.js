@@ -61,7 +61,7 @@ const DottedBackground = () => {
     const distance = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2);
     const maxDistance = 100; 
     const fadeFactor = Math.max(0, (maxDistance - distance) / maxDistance);
-    const defaultDotColor = 170;
+    const defaultDotColor = 200;
     const maxDotColorFactor = 120;
     const r = Math.round(defaultDotColor - fadeFactor * maxDotColorFactor);
     const g = Math.round(defaultDotColor - fadeFactor * maxDotColorFactor);
