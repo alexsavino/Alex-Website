@@ -7,21 +7,24 @@
 @import '../universals.css';
 
 
+
 /****** LARGER CONTAINERS ******/
 .container {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: purple;
+  min-width: 100%;
+  gap: clamp(0px, 5vw, 100px);
 }
 
 
 .rightSideContainer {
-  /* position: absolute; */
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  width: 317px;
   gap: 30px;
 }
 
@@ -32,7 +35,7 @@
 /****** RED RECTANGLE CIRCUIT ******/
 .redContainer {
   position: relative;
-  width: 569px;
+  min-width: 569px;
   height: 548px;
 }
 

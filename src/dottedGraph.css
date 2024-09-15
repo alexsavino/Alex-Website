@@ -1,4 +1,4 @@
-.dotted-grid {
+.dotted-graph {
   position: fixed;
   top: 10px;
   left: 10px;
@@ -12,6 +12,6 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background-color: rgb(170,170,170);
-  border-radius: 50%;
+  /* background-color: rgb(170,170,170); */
+  border-radius: 25%;
 }

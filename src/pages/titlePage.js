@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './TitlePage.css';
 
 // import DottedGraphBackground from './DottedGraph';
 import titlePageSchematic from '../images/title-page-schematic.png';
-import maltaBoard from '../images/malta-board.png'
-
+import maltaBoard from '../images/malta-board.png';
 
 const TitlePage = () => {
+  
+  /* TO MAKE THE 'I'M A SOFTWARE ENGINEER' ANIMATION */
+  const [text, _] = useState('I\'m a SOFTWARE ENGINEER');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const blinkingRef = useRef(null);
+
+  useEffect(() => {
+
+    const intervalId = setInterval(() => {
+      if (currentIndex < text.length) {
+        setCurrentIndex(currentIndex + 1);
+      } else {
+        clearInterval(intervalId);
+        const blinkingInterval = setInterval(() => {
+          blinkingRef.current.style.visibility = blinkingRef.current.style.visibility === 'visible' ? 'hidden' : 'visible';
+        }, 500);
+
+      }
+    }, 100);
+
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
+
 
   return (
-    <div className="container"> 
+    <div className="container">
 
       <div className="redContainer">
         <div className="circuitRedRectangle"></div>
@@ -25,7 +47,7 @@ const TitlePage = () => {
 
           <div className="SWEIntroContainer">
             <p className="SWELine small">Hello, I'm <span className="myName">Alexandra Savino</span>.</p>
-            <p className="SWELine large">I'm a SOFTWARE ENGINEER _</p>
+            <p className="SWELine large">{text.substring(0, currentIndex)} <span ref={blinkingRef}>_</span></p>
           </div> 
 
           <div className="astroIntroContainer">
@@ -53,9 +75,7 @@ const TitlePage = () => {
       </div>
 
     </div>
-
   );
-}
-
+};
 
 export default TitlePage;

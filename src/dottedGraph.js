@@ -1,9 +1,5 @@
-// DottedBackground.js
 import React, { useState, useEffect } from 'react';
 import './DottedGraph.css';
-
-// Even if youre not clicked onto the screen but it’s in your view?
-// Null when your mouse leaves the screen?
 
 const DottedBackground = () => {
   const [mouseX, setMouseX] = useState(null);
@@ -21,7 +17,7 @@ const DottedBackground = () => {
       setViewportWidth(window.innerWidth);
       setViewportHeight(window.innerHeight);
     };
- 
+
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
 
@@ -41,6 +37,7 @@ const DottedBackground = () => {
 
     for (let x = -50; x < width; x += spacing) {
       for (let y = -50; y < height; y += spacing) {
+        const { backgroundColor, size } = calculateBackgroundColorAndSize(x, y);
         dots.push(
           <span
             key={`${x}-${y}`}
@@ -48,7 +45,9 @@ const DottedBackground = () => {
             style={{
               left: `${x}px`,
               top: `${y}px`,
-              opacity: calculateOpacity(x, y),
+              backgroundColor,
+              width: `${size}px`,
+              height: `${size}px`,
             }}
           />
         );
@@ -57,12 +56,19 @@ const DottedBackground = () => {
     return dots;
   };
 
-  const calculateOpacity = (x, y) => {
-    if (mouseX === null || mouseY === null) return 1;
+  const calculateBackgroundColorAndSize = (x, y) => {
+    if (mouseX === null || mouseY === null) return { backgroundColor: 'rgb(170, 170, 170)', size: 2 };
     const distance = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2);
-    const maxDistance = 150;
+    const maxDistance = 100; 
     const fadeFactor = Math.max(0, (maxDistance - distance) / maxDistance);
-    return 1 - fadeFactor;
+    const defaultDotColor = 170;
+    const maxDotColorFactor = 120;
+    const r = Math.round(defaultDotColor - fadeFactor * maxDotColorFactor);
+    const g = Math.round(defaultDotColor - fadeFactor * maxDotColorFactor);
+    const b = Math.round(defaultDotColor - fadeFactor * maxDotColorFactor);
+    const sizeFactor = Math.max(0, 1 - fadeFactor);
+    const size = distance < maxDistance ? 4 - sizeFactor * 2 : 2;
+    return { backgroundColor: `rgb(${r}, ${g}, ${b})`, size };
   };
 
   return <div className="dotted-graph">{generateDots()}</div>;
