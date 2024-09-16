@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import './TitlePage.css';
 
 // import DottedGraphBackground from './DottedGraph';
-import titlePageSchematic from '../images/title-page-schematic.png';
-import maltaBoard from '../images/malta-board.png';
+import titlePageSchematic from '../outside-files/title-page-schematic.png';
+import maltaBoard from '../outside-files/malta-board.png';
 
 const TitlePage = () => {
   
   /* TO MAKE THE 'I'M A SOFTWARE ENGINEER' ANIMATION */
-  const [text, _] = useState('I\'m a SOFTWARE ENGINEER');
+  const [text] = useState('I\'m a SOFTWARE ENGINEER');
   const [currentIndex, setCurrentIndex] = useState(0);
   const blinkingRef = useRef(null);
 
@@ -19,7 +19,7 @@ const TitlePage = () => {
         setCurrentIndex(currentIndex + 1);
       } else {
         clearInterval(intervalId);
-        const blinkingInterval = setInterval(() => {
+        setInterval(() => {
           blinkingRef.current.style.visibility = blinkingRef.current.style.visibility === 'visible' ? 'hidden' : 'visible';
         }, 500);
 
@@ -27,7 +27,7 @@ const TitlePage = () => {
     }, 100);
 
     return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  }, [currentIndex, text]);
 
 
   return (
@@ -51,16 +51,18 @@ const TitlePage = () => {
           </div> 
 
           <div className="astroIntroContainer">
-            <p className="astroLine large">Astrophysics Graduate</p>
-            <p className="astroLine small">from</p>
-            <p className="astroLine large">Columbia University</p>
+            <p className="astroLine large">ex-Astrophysics,</p>
+            {/* <p className="astroLine small">from</p> */}
+            <p className="astroLine large">Columbia University Graduate</p>
           </div>
 
         </div>
       
 
         <div className="buttonContainer">
-          <button className="titleButtons downloadCVButton">Download CV</button>
+          <a href="./Alexandra-Savino-Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <button className="titleButtons downloadCVButton">Download CV</button>
+          </a>
           <button className="titleButtons contactMeButton">Contact Me</button>
         </div> 
 

@@ -4,17 +4,20 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import DottedBackground from './DottedGraph'; 
-import TitlePage from './pages/TitlePage';
+// import TitlePage from './pages/TitlePage';
+// import ContactUs from './pages/ContactUs';
+import NavBar from './NavBar';
 
 const App = () => {
 
   return (
-    
     <div className="app-container">
       <DottedBackground />
       <Router>
         <Routes>
-          <Route path="/" element={<TitlePage />} />
+          {/* <Route path="/" element={<TitlePage />} /> */}
+          {/* <Route path="/" element={<ContactUs />} /> */}
+          <Route path="/" element={<NavBar />} />
         </Routes>
       </Router>
     </div>

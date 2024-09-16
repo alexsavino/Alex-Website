@@ -4,6 +4,7 @@
 
 :root {
   /* FONTS */
+  /* Monaco */
   --font-computer: 'Mohave', sans-serif;
   /* --font-computer-ls: -0.03em; */
   --font-script: 'Newsreader', serif;
@@ -14,5 +15,5 @@
   --my-green: #387F77;
   --my-blue: #4AA3EA;
   --my-beige: #DFDBC6;
-  --my-grey: #E6E6E6;
+  --my-grey: #C2C2C2;
 }
