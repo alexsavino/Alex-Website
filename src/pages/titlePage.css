@@ -1,11 +1,4 @@
-/* .circuitPlacementContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-} */
-@import '../universals.css';
-
+@import '../generals/universals.css';
 
 
 /****** LARGER CONTAINERS ******/
@@ -146,7 +139,7 @@
   top: 63%;
   transform: translateY(-60%);
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.1s ease-in-out; */
 }
 
 .titleButtons:hover {

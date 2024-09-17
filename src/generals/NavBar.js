@@ -5,7 +5,7 @@ import './universals.css'
 const NavBar = () => {
 
   return (
-    <div className="container">
+    <div className="navBarContainer">
       <div className="mainBar">
         <div className="mainButtonContainer">
 
@@ -25,10 +25,22 @@ const NavBar = () => {
           <div className="buttonWrapper">
             <button className="mainButton">Social</button>  
             <div className="dropdown">
-              <button className="subButton">LinkedIn</button>
-              <button className="subButton">GitHub</button>
-              <button className="subButton">GrabCAD</button>
-              <button className="subButton">Instagram</button>
+              <a href="https://www.linkedin.com/in/alexandra-savino-879146200/" target="_blank" rel="noopener noreferrer" className="subButton">
+                <img src="/linkedin-logo.png" alt="LinkedIn Logo" className="linkedinLogo"/>
+                LinkedIn
+              </a>
+              <a href="https://github.com/alexsavino" target="_blank" rel="noopener noreferrer" className="subButton">
+                <img src="/github-logo.png" alt="GitHub Logo" className="githubLogo"/>
+                GitHub
+              </a>
+              <a href="https://grabcad.com/alexandra.savino-1" target="_blank" rel="noopener noreferrer" className="subButton">
+                <img src="/grabcad-logo.png" alt="GrabCAD Logo" className="grabcadLogo"/>
+                GrabCAD
+              </a>
+              <a href="https://www.instagram.com/alex.v.savino/" target="_blank" rel="noopener noreferrer" className="subButton">
+                <img src="/instagram-logo.png" alt="Instagram Logo" className="instagramLogo"/>
+                Instagram
+              </a>
             </div>
           </div>
 

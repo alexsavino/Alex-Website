@@ -1,0 +1,9 @@
+.navBar {
+    position: fixed; /* Ensure it's fixed */
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100vh; /* Adjust height to match viewport */
+    background-color: purple;
+    z-index: 10000;
+  }

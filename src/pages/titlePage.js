@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './TitlePage.css';
 
-// import DottedGraphBackground from './DottedGraph';
-import titlePageSchematic from '../outside-files/title-page-schematic.png';
-import maltaBoard from '../outside-files/malta-board.png';
 
 const TitlePage = () => {
   
@@ -35,11 +33,7 @@ const TitlePage = () => {
 
       <div className="redContainer">
         <div className="circuitRedRectangle"></div>
-        <img
-          src={titlePageSchematic}
-          alt="Arbitrary Circuit Schematic"
-          className="circuitSchematicPNG"
-        />
+        <img src="/title-page-schematic.png" alt="Arbitrary Circuit Schematic" className="circuitSchematicPNG"/>
       </div>
 
       <div className="rightSideContainer">
@@ -63,16 +57,14 @@ const TitlePage = () => {
           <a href="./Alexandra-Savino-Resume.pdf" target="_blank" rel="noopener noreferrer">
             <button className="titleButtons downloadCVButton">Download CV</button>
           </a>
-          <button className="titleButtons contactMeButton">Contact Me</button>
+          <Link to="/contact-me">
+            <button className="titleButtons contactMeButton">Contact Me</button>
+          </Link>
         </div> 
 
         <div className="yellowContainer">
           <div className="pngYellowRectangle"></div>
-          <img
-            src={maltaBoard}
-            alt="Arbitrary Chip"
-            className="maltaBoardPNG"
-          />
+          <img src="/malta-board.png" alt="Arbitrary Chip" className="maltaBoardPNG"/>
         </div>
       </div>
 

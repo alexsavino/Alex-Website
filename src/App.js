@@ -3,10 +3,12 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import DottedBackground from './DottedGraph'; 
-// import TitlePage from './pages/TitlePage';
-// import ContactUs from './pages/ContactUs';
-import NavBar from './NavBar';
+import DottedBackground from './generals/DottedGraph'; 
+import NavBar from './generals/NavBar';
+import NavBarLayout from './generals/NavBarLayout';
+
+import TitlePage from './pages/TitlePage';
+import ContactMe from './pages/ContactMe';
 
 const App = () => {
 
@@ -15,9 +17,10 @@ const App = () => {
       <DottedBackground />
       <Router>
         <Routes>
-          {/* <Route path="/" element={<TitlePage />} /> */}
-          {/* <Route path="/" element={<ContactUs />} /> */}
           <Route path="/" element={<NavBar />} />
+          {/* <Route path="/" element={<TitlePage />} /> */}
+          {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
+          {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
         </Routes>
       </Router>
     </div>
