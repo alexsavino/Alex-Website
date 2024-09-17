@@ -5,12 +5,11 @@ const NavBarLayout = ({ children }) => {
   return (
     <div>
       <div className="navBar">
-        {/* <p>SO WEIRD</p> */}
         <NavBar />
       </div>
-      {/* <div className="content">
+      <div className="content">
         {children}
-      </div> */}
+      </div>
     </div>
   );
 };

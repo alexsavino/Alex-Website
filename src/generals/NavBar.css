@@ -1,6 +1,6 @@
 .navBarContainer {
   position: relative;
-  top: 10px;
+  top: 6px;
 
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   min-width: 473px;
   height: 47px;
 
-  background-color: purple;
+  /* background-color: purple; */
 }
 
 .mainBar {

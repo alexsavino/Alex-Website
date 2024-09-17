@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import DottedBackground from './generals/DottedGraph'; 
-import NavBar from './generals/NavBar';
+// import NavBar from './generals/NavBar';
 import NavBarLayout from './generals/NavBarLayout';
 
 import TitlePage from './pages/TitlePage';
@@ -17,10 +17,8 @@ const App = () => {
       <DottedBackground />
       <Router>
         <Routes>
-          <Route path="/" element={<NavBar />} />
           {/* <Route path="/" element={<TitlePage />} /> */}
-          {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
-          {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
+          <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} />
         </Routes>
       </Router>
     </div>

@@ -1,12 +1,10 @@
 import React from 'react';
+import './ContactMe.css';
 
 const ContactMe = () => {
 
   return (
-    <div>
-    {/* <div className="beigeBackground"> */}
-      your mom
-    </div>
+    <div className="primaryRectangle"></div>
   );
 };
 
