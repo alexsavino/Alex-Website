@@ -68,16 +68,16 @@ const ContactMe = () => {
 
         <div className="inputBoxContainer">
           <label htmlFor="message">Message</label>
-          <textarea className="inputBox"
+          <input className="inputBox messageBox"
             id="message"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            placeholder="Type your message here."
             required
-          ></textarea>
+          />
+          <span className="messagePlaceholder">Type your message here.</span>
         </div>
 
-        <button className="test-button" onClick={handleSendMessage}>SUBMIT</button>
+        {/* <button className="submitButton" onClick={handleSendMessage}>SUBMIT</button> */}
       </div>
     </div>
   );
