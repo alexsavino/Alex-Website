@@ -38,36 +38,46 @@ const ContactMe = () => {
 
   return (
     <div className="primaryRectangle">
-      <div className="input-container">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          placeholder="Jane Doe"
-          required
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder="email@email.com"
-          required
-        />
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          placeholder="Type your message here."
-          required
-        ></textarea>
-        <button className="test-button" onClick={handleSendMessage}>Send Message</button>
+
+      <div className="inputContainer">
+        <div className="inputBoxContainer">
+          <label htmlFor="name">Name</label>
+          <input className="inputBox"
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="Jane Doe"
+            required
+          />
+        </div>
+
+        <div className="inputBoxContainer">
+          <label htmlFor="email">Email</label>
+          <input className="inputBox"
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="email@gmail.com"
+            required
+          />
+        </div>
+
+        <div className="inputBoxContainer">
+          <label htmlFor="message">Message</label>
+          <textarea className="inputBox"
+            id="message"
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            placeholder="Type your message here."
+            required
+          ></textarea>
+        </div>
+
+        <button className="test-button" onClick={handleSendMessage}>SUBMIT</button>
       </div>
     </div>
   );

@@ -8,6 +8,8 @@
   --font-computer: 'Mohave', sans-serif;
   /* --font-computer-ls: -0.03em; */
   --font-script: 'Newsreader', serif;
+  --font-news-cycle: 'News Cycle', sans-serif;
+  --font-news-cycle-ls: -0.03em;
 
   /* COLORS */
   --my-red: #CE2C1E;
@@ -16,4 +18,5 @@
   --my-blue: #4AA3EA;
   --my-beige: #DFDBC6;
   --my-grey: #C2C2C2;
+  --my-darker-grey: #7D7B6F;
 }

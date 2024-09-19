@@ -15,3 +15,37 @@
   border-radius: 10px;
 }
 
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.inputBoxContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: red;
+  width: fit-content;
+
+  font-family: var(--font-news-cycle);
+  font-size: 18px;
+  font-weight: semibold;
+
+}
+
+.inputBox {
+  /* position: relative; */
+  width: 622px;
+  height: 31px;
+
+  background-color: var(--my-beige);
+  border: solid;
+  border-color: var(--my-darker-grey);
+  border-width: 1px;
+  border-radius: 7px;
+
+  font-family: var(--font-news-cycle);
+  font-size: 18px;
+}
+
