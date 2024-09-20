@@ -54,13 +54,14 @@ const TitlePage = () => {
       
 
         <div className="buttonContainer">
-          <a href="./Alexandra-Savino-Resume.pdf" target="_blank" rel="noopener noreferrer">
-            <button className="titleButtons downloadCVButton">Download CV</button>
-          </a>
-          <Link to="/contact-me">
-            <button className="titleButtons contactMeButton">Contact Me</button>
-          </Link>
-        </div> 
+          <button className="titleButtons downloadCVButton" onClick={() => window.open('./Alexandra-Savino-Resume.pdf', '_blank')}>
+            Download CV
+          </button>
+          <button className="titleButtons contactMeButton" onClick={() => window.location.href = '/contact-me'}>
+            Contact Me
+          </button>
+        </div>
+
 
         <div className="yellowContainer">
           <div className="pngYellowRectangle"></div>

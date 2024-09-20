@@ -1,0 +1,15 @@
+
+server/node_modules/undici-types/package.json
+server/node_modules/undefsafe/package.json
+server/node_modules/zod/package.json
+/server
+client/node_modules/yargs/locales/ru.json
+client/node_modules/serve-index/node_modules/statuses/package.json
+.DS_Store
+client/node_modules/.cache/babel-loader/00633012fce990df6329e46722381bb458e65daaabfe7032d1974bd88b6f6481.json
+client/node_modules/.cache/babel-loader/0188e78956b15dd6eb409b36951c62331bcf01ac64eae537cbfe77c0cddadc36.json
+client/node_modules/.cache/babel-loader/019bf8f759ca9a05228d8ff3ed7fe7ce68e7d3482f9061b3bd79e1fbb2f65a72.json
+client/node_modules/.cache/babel-loader/03dac812195111c0a9a55a5bb7efa56841c8ba3ce732c770b8be27b1c68140fc.json
+client/node_modules/.cache/babel-loader/04cefa991e0dc1af9b192f0b51102822ef3073a3d1f8d38cf0dbf683595c0b37.json
+client/node_modules/.cache/babel-loader/047fbbe876c24a701ed911fdc73080b86ea89d325b0d9f5d112c668abea2edaf.json
+/client

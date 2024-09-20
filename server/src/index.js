@@ -7,9 +7,9 @@ const app = express();
 const TIMEOUT_MS = 5000;
 
 const contactFormSchema = z.object({
-  name: z.string().min(1, { message: "Your name is required!" }),
+  name: z.string().min(1, { message: "Your name is required." }),
   email: z.string().email(),
-  message: z.string().min(1, { message: "A message is required!" }),
+  message: z.string().min(1, { message: "A message is required." }),
 });
 
 app.use(cors());
@@ -42,14 +42,20 @@ app.post('/send-message', async (req, res) => {
     res.status(200).json({ message: 'Data appended successfully!' });
   } catch (error) {
     console.error('Error details:', error);
+
     if (error.message.includes('Request timed out')) {
       res.status(504).json({ error: 'Request timed out' });
     } else if (error instanceof ZodError) {
-      res.status(400).json({ error: error.message });
+      const formattedErrors = error.errors.map(err => ({
+        field: err.path[0], 
+        message: err.message
+      }));
+      res.status(400).json({ errors: formattedErrors });
     } else {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   }
 });
+
 
 app.listen(5001, () => console.log("App running on http://localhost:5001"));

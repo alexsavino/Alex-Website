@@ -1,34 +1,123 @@
 @import '../generals/universals.css';
 
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* CONTACT ME MANILA LABEL */
+.contactMeSign {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  position: fixed;
+  top: 65px;
+  left: 90px;
+  width: auto;
+
+  background-color: var(--my-green);
+  border-radius: 10px;
+
+  font-family: var(--font-script);
+  font-weight: bold;
+  letter-spacing: var(--font-script-ls);
+
+  z-index: 1;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.subtitle {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.title, .subtitle {
+  margin: 0;
+}
+
+
+/* BEIGE BACKGROUND */
 .primaryRectangle {
-  position: absolute;
-  top: 93px;
-  left: 60px;
-  right: 60px;
-  bottom: 70px;
+  flex: 1;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top:  50px;
+  margin-bottom: 74px; 
 
-  width: calc(100% - 117px);
-  height: calc(100% - 160px);
-
-  display: flex; /* Add flexbox */
-  justify-content: center; /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  position: relative;
 
   background-color: var(--my-beige);
   border: none;
   border-radius: 10px;
+  padding: 55px 0;
+}
+
+
+/* MANAGING THE PAGE'S INPUT CONTENT */
+.inputBox,
+.messageBox {
+  width: clamp(20px, 50vw, 622px);
+  min-height: 28px;
+  padding: 5px;
+  overflow: hidden; 
+
+  background-color: var(--my-beige);
+  border: solid;
+  border-color: var(--my-darker-grey);
+  border-width: 1.5px;
+  border-radius: 8px;
+
+  font-family: var(--font-news-cycle);
+  font-size: 17px;
+  letter-spacing: var(--font-news-cycle-ls);
+}
+
+.inputBox::placeholder,
+.messageBox::placeholder {
+  color: var(--my-darker-grey);
+}
+
+.inputBox.error,
+.messageBox.error {
+  border: 1.5px solid var(--my-red);
+  border-radius: 8px;
+}
+
+.inputBox.error::placeholder,
+.messageBox.error::placeholder {
+  color: var(--my-red);
+}
+
+.messageBox {
+  height: 175px;
+  max-height: none;
+  resize: none;
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
   width: fit-content;
-
-  background-color: green;
+  align-items: center;
+  width: fit-content;
   gap: 30px;
 }
 
+
 .inputBoxContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -42,46 +131,72 @@
   gap: 6px;
 }
 
-.inputBox {
-  width: 622px;
-  height: 28px;
+
+/* ADD ARROW BUTTON FUNCTIONALITY */
+.submitButton {
+  position: relative;
+  overflow: hidden;
+  height: 37px;
+  width: 115px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10px;
+  text-align: center;
 
   background-color: var(--my-beige);
   border: solid;
   border-color: var(--my-darker-grey);
   border-width: 1.5px;
-  border-radius: 7px;
+  border-radius: 8px;
 
-  font-family: var(--font-news-cycle);
-  font-size: 17px;
-  letter-spacing: var(--font-news-cycle-ls);
-}
-
-.messageBox {
-  height: 175px;
-}
-
-.messagePlaceholder {
-  position: absolute;
-  top: 5px;
-  left: 5px;
+  font-size: 18px;
+  color: black;
+  line-height: 1.85;
   
-  font-family: var(--font-news-cycle);
-  font-size: 17px;
-  opacity: 0.5;
-  letter-spacing: var(--font-news-cycle-ls);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-.messageBox:focus-within .messagePlaceholder {
+.submitButton::before {
+  content: "→";
+  font-size: 18px;
+  color: black;
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  transform: translateY(-50%);
   opacity: 0;
+  transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.submitButton {
-  width: 40px;
-  height: 40px;
+.submitButton:hover {
+  padding-right: 30px;
+}
 
-  /* background-color:  */
-  font-family: var(--font-news-cycle);
-  font-size: 17px;
-  letter-spacing: var(--font-news-cycle-ls);
+.submitButton:hover::before {
+  right: 15px;
+  opacity: 1;
+}
+
+.submitButton:active {
+  transform: scale(0.95);
+}
+
+.thankYouMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 476px;
+
+  color: black;
+  font-family: var(--font-script);
+  letter-spacing: var(--font-script-ls);
+
+}
+
+.thankYouMessage h2, h3 {
+  margin: 10px;
 }
