@@ -9,13 +9,17 @@ body {
 }
 
 /* CONTACT ME MANILA LABEL */
+.pageContainer {
+  position: relative;
+}
+
 .contactMeSign {
   display: flex;
   flex-direction: column;
   padding: 10px;
 
-  position: fixed;
-  top: 65px;
+  position: absolute;
+  top: -30px;
   left: 90px;
   width: auto;
 
@@ -28,6 +32,7 @@ body {
 
   z-index: 1;
 }
+
 
 .title {
   font-size: 40px;
@@ -42,28 +47,47 @@ body {
   margin: 0;
 }
 
-
 /* BEIGE BACKGROUND */
 .primaryRectangle {
   flex: 1;
   margin-left: 60px;
   margin-right: 60px;
-  margin-top:  50px;
+  margin-top: 50px;
   margin-bottom: 74px; 
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-
-  position: relative;
-
   background-color: var(--my-beige);
   border: none;
   border-radius: 10px;
   padding: 55px 0;
 }
 
+/* MANAGING INPUT CONTAINERS */
+.inputContainer {
+  position: relative;
+  transform: translateY(calc(-1vw * 0.5 + 20px));
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.inputBoxContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+
+  font-family: var(--font-news-cycle);
+  font-size: 18px;
+  letter-spacing: var(--font-news-cycle-ls);
+  font-weight: semibold;
+
+  gap: 6px;
+}
 
 /* MANAGING THE PAGE'S INPUT CONTENT */
 .inputBox,
@@ -71,7 +95,7 @@ body {
   width: clamp(20px, 50vw, 622px);
   min-height: 28px;
   padding: 5px;
-  overflow: hidden; 
+  overflow: hidden;
 
   background-color: var(--my-beige);
   border: solid;
@@ -82,11 +106,6 @@ body {
   font-family: var(--font-news-cycle);
   font-size: 17px;
   letter-spacing: var(--font-news-cycle-ls);
-}
-
-.inputBox::placeholder,
-.messageBox::placeholder {
-  color: var(--my-darker-grey);
 }
 
 .inputBox.error,
@@ -104,31 +123,6 @@ body {
   height: 175px;
   max-height: none;
   resize: none;
-}
-
-.inputContainer {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  align-items: center;
-  width: fit-content;
-  gap: 30px;
-}
-
-
-.inputBoxContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
-
-  font-family: var(--font-news-cycle);
-  font-size: 18px;
-  letter-spacing: var(--font-news-cycle-ls);
-  font-weight: semibold;
-
-  gap: 6px;
 }
 
 
@@ -194,7 +188,6 @@ body {
   color: black;
   font-family: var(--font-script);
   letter-spacing: var(--font-script-ls);
-
 }
 
 .thankYouMessage h2, h3 {

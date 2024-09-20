@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './ContactMe.css';
 
 const ContactMe = () => {
@@ -10,6 +10,9 @@ const ContactMe = () => {
   const [nameError, setNameError] = useState('');
   const [messageError, setMessageError] = useState('');
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const namePattern = /^[a-zA-Z' -]+$/;
+
   const handleSendMessage = async (event) => {
     event.preventDefault();
 
@@ -17,37 +20,40 @@ const ContactMe = () => {
     const trimmedEmail = email.trim();
     const trimmedMessage = message.trim();
 
-    // Reset errors
     setNameError('');
     setMessageError('');
     setEmailError('');
 
-    // Validate inputs
     let hasError = false;
 
     if (!trimmedName) {
       setNameError('Your name is required!');
       hasError = true;
-      setName(''); // Clear the name input to show error placeholder
+      setName('');
+    } else if (!namePattern.test(trimmedName)) {
+      setNameError("Name can only contain letters, apostrophes, spaces, and hyphens.");
+      hasError = true;
+      setName('');
+    } else {
+      setNameError('');
     }
 
     if (!trimmedEmail) {
       setEmailError('A valid email is required!');
       hasError = true;
-      setEmail(''); // Clear the email input to show error placeholder
-    } else if (!/^\S+@\S+\.\S+$/.test(trimmedEmail)) {
-      setEmailError('A valid email is required!');
+      setEmail('');
+    } else if (!emailRegex.test(trimmedEmail)) {
+      setEmailError('Please enter a valid email!');
       hasError = true;
-      setEmail(''); // Clear the email input to show error placeholder
+      setEmail('');
     }
 
     if (!trimmedMessage) {
       setMessageError('A message is required!');
       hasError = true;
-      setMessage(''); // Clear the message input to show error placeholder
+      setMessage('');
     }
 
-    // If any error exists, stop submission
     if (hasError) {
       return;
     }
@@ -70,8 +76,8 @@ const ContactMe = () => {
         const emailError = errorData.errors.find((err) => err.field === 'email');
 
         if (emailError) {
-          setEmail(''); // Clear the email input
-          setEmailError('Invalid Email'); // Set the error message
+          setEmail(''); 
+          setEmailError('Invalid Email');
         }
 
         throw new Error('Error submitting data');
@@ -82,15 +88,29 @@ const ContactMe = () => {
       setName('');
       setEmail('');
       setMessage('');
-      setEmailError(''); // Clear email error on success
+      setEmailError('');
 
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
+  const nameInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+
+  const handleSwipe = (event, inputRef) => {
+    if (event.touches.length === 2) {
+      const deltaX = event.touches[0].clientX - event.touches[1].clientX;
+      if (deltaX > 0) {
+        inputRef.current.scrollLeft += 20; // Adjust scroll value as needed
+      } else if (deltaX < 0) {
+        inputRef.current.scrollLeft -= 20; // Adjust scroll value as needed
+      }
+    }
+  };
+
   return (
-    <div>
+    <div className="pageContainer">
       <div className="contactMeSign">
         <p className="title">Contact Me</p>
         <p className="subtitle">I'd love to connect!</p>
@@ -119,6 +139,9 @@ const ContactMe = () => {
                 placeholder={nameError || 'Jane Doe'}
                 autoComplete="off"
                 required
+                ref={nameInputRef}
+                onTouchStart={(event) => handleSwipe(event, nameInputRef)}
+                onTouchMove={(event) => handleSwipe(event, nameInputRef)}
               />
             </div>
 
@@ -137,9 +160,11 @@ const ContactMe = () => {
                 placeholder={emailError || 'email@gmail.com'}
                 autoComplete="off"
                 required
+                ref={emailInputRef}
+                onTouchStart={(event) => handleSwipe(event, emailInputRef)}
+                onTouchMove={(event) => handleSwipe(event, emailInputRef)}
               />
             </div>
-
 
             <div className="inputBoxContainer">
               <label htmlFor="message">Message</label>
