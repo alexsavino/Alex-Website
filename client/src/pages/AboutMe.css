@@ -77,21 +77,21 @@
 
 
 /* TEXT & IMAGE */
-@media (max-width: 1150px) {
-  .introWrapper {
-    gap: 30px;
+@media (max-width: 1100px) {
+  .imageAndTextWrapper {
+    width: 850px !important;
   }
 }
 
-@media (min-width: 1151px) {
-  .introWrapper {
-    gap: calc(30px + (145 - 30) * ((100vw - 1151px) / (1400 - 1151)));
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .imageAndTextWrapper {
+    width: calc(850px + (1000 - 850) * ((100vw - 1150px) / (1400 - 1150))) !important;
   }
 }
 
 @media (min-width: 1400px) {
-  .introWrapper {
-    gap: 145px;
+  .imageAndTextWrapper {
+    width: 1000px !important;
   }
 }
 

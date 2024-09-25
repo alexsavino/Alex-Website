@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutMe.css';
 
+
 const AboutMe = () => {
     
   return (
@@ -12,7 +13,7 @@ const AboutMe = () => {
       <div className="primaryRectangle">
 
 
-        <div className='imageAndTextWrapper introWrapper'>
+        <div className='imageAndTextWrapper'>
           <div className='introParagraph'>
             <p>
               I'm a <span class="bold">Barnard College graduate with a B.A. in Astrophysics</span>,<br></br>
@@ -38,17 +39,16 @@ const AboutMe = () => {
           </p>
         </div>
 
-
-        {/* <div className="transitionLine">
+        <div className="transitionLine">
           <p>
             During my time as an undergraduate, I ... 
           </p>
-        </div> */}
+        </div>
 
 
-        {/* <div className="imageAndTextWrapper">
+        {/* DESY/CERN */}
+        <div className="imageAndTextWrapper">
           <div className="tempImage"></div>
-
           <div className="desyParagraph">
             <p>
               ... conducted <span class="bold">detector physics research</span> at particle<br></br>
@@ -60,32 +60,39 @@ const AboutMe = () => {
               automation tools to streamline research procedures.
             </p>
           </div>
-        </div> */}
+        </div>
 
-
-        {/* <div className="amnhParagraph">
+        {/* AMERICAN MUSEUM OF NATURAL HISTORY */}
+        <div className="imageAndTextWrapper">
+         <div className="amnhParagraph">
           <p>
-            ... conducted <span class="bold">computational astrophysics research</span> at the<br></br> 
-            <span class="bold">American Museum of Natural History</span>, where I developed<br></br> 
-            a data pipeline for processing stellar cluster evolution<br></br> 
-            simulations, implemented machine learning algorithms for<br></br> 
-            cluster analysis, and created an interactive 3D visualization<br></br> 
-            model, as well as mentored a junior research intern.
-          </p>
-        </div> */}
+              ... conducted <span class="bold">computational astrophysics research</span> at the<br></br> 
+              <span class="bold">American Museum of Natural History</span>, where I developed<br></br> 
+              a data pipeline for processing stellar cluster evolution<br></br> 
+              simulations, implemented machine learning algorithms for<br></br> 
+              cluster analysis, and created an interactive 3D visualization<br></br> 
+              model, as well as mentored a junior research intern.
+            </p>
+          </div>
+          <div className="tempImage"></div>
+        </div>
 
-        {/* <div className="microChasParagraph">
-          <p>
-            ... led a team in the <span class="bold">development of MicroCh&alpha;s</span>, a specialized<br></br> 
-            spectrograph, at <span class="bold">Columbia University's Department of<br></br>  
-            Astronomy</span>.  I iteratively engineered components, led<br></br>
-            rigorous testing, and spearheaded successful astronomical<br></br>
-            observations. This project won <span class="bold">1st Place</span> at Columbia's Annual<br></br>
-            Physics Research Competition as well as <span class="bold">NASA funding<br></br>
-            to be launched into permanent orbit aboard it's own nanosatellite</span>.
-          </p>
-        </div> */}
 
+        {/* MICROCHAS/NASA */}
+        <div className="imageAndTextWrapper">
+          <div className="tempImage"></div>
+          <div className="microchasParagraph">
+            <p>
+              ... led a team in the <span class="bold">development of MicroCh&alpha;s</span>, a specialized<br></br> 
+              spectrograph, at <span class="bold">Columbia University's Department of<br></br>  
+              Astronomy</span>.  I iteratively engineered components, led<br></br>
+              rigorous testing, and spearheaded successful astronomical<br></br>
+              observations. This project won <span class="bold">1st Place</span> at Columbia's Annual<br></br>
+              Physics Research Competition as well as <span class="bold">NASA funding<br></br>
+              to be launched into permanent orbit aboard it's own nanosatellite</span>.
+            </p>
+          </div>
+        </div>
 
         <div className="longerParagraph">
           <p>
@@ -101,19 +108,17 @@ const AboutMe = () => {
             But in sum, I’m focused on merging my scientific knowledge with my passion for intuitive, visually appealing software design.<br></br>
             I’m particularly interested in roles that combine full-stack development, design, data visualization, and creative problem-solving.
           </p>
-          <p>
-            Thank you for reading! Feel free to explore my <span class="bold">projects</span> and check out my <button className="bold resumeButton" onClick={() => window.open('./Alexandra-Savino-Resume.pdf', '_blank')}>resume</button>!
-          </p>
         </div>
 
-        {/* <div>
+        <div>
           <p>
-            You can find me on LinkedIn or reach out via email to connect!
+            {/* onClick={() => window.location.href = '/projects'} */}
+            Thank you for reading! Feel free to explore my <span class="bold insideButton">projects</span> and check out my <button className="bold insideButton" onClick={() => window.open('./Alexandra-Savino-Resume.pdf', '_blank')}>resume</button>!
           </p>
-        </div> */}
-        {/* <div className=""></div> */}
-        {/* <div className="tempImage"></div> */}
-
+          <p>
+            You can find me on <a href="https://www.linkedin.com/in/alexandravsavino/" target="_blank" rel="noopener noreferrer"><span class="bold insideButton">LinkedIn</span></a> or reach out via <span class="bold insideButton" onClick={() => window.location.href = '/contact-me'}>email</span> to connect!
+          </p>
+        </div>
 
       </div>
     </div>
