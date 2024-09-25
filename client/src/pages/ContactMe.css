@@ -1,8 +1,6 @@
 @import '../generals/universals.css';
 
-#contactMe * {}
-
-body {
+#contactMe body {
   margin: 0;
   height: 100vh;
   display: flex;
@@ -11,11 +9,11 @@ body {
 }
 
 /* CONTACT ME MANILA LABEL */
-.pageContainer {
+#contactMe .pageContainer {
   position: relative;
 }
 
-.contactMeSign {
+#contactMe .contactMeSign {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -36,17 +34,17 @@ body {
 }
 
 
-.title {
+#contactMe .title {
   font-size: 40px;
-} .subtitle {
+} #contactMe .subtitle {
   font-size: 20px;
   padding-left: 30px;
-} .title, .subtitle {
+} #contactMe .title, .subtitle {
   margin: 0;
 }
 
 /* BEIGE BACKGROUND */
-.primaryRectangle {
+#contactMe .primaryRectangle {
   flex: 1;
   margin-left: 60px;
   margin-right: 60px;
@@ -59,10 +57,11 @@ body {
   border: none;
   border-radius: 10px;
   padding: 55px 0;
+  color: black;
 }
 
 /* MANAGING INPUT CONTAINERS */
-.inputContainer {
+#contactMe .inputContainer {
   position: relative;
   transform: translateY(calc(-1vw * 0.5 + 20px));
   width: fit-content;
@@ -72,7 +71,7 @@ body {
   gap: 30px;
 }
 
-.inputBoxContainer {
+#contactMe .inputBoxContainer {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -88,8 +87,8 @@ body {
 }
 
 /* MANAGING THE PAGE'S INPUT CONTENT */
-.inputBox,
-.messageBox {
+#contactMe .inputBox,
+#contactMe .messageBox {
   width: clamp(20px, 50vw, 622px);
   min-height: 28px;
   padding: 5px;
@@ -106,18 +105,18 @@ body {
   letter-spacing: var(--font-news-cycle-ls);
 }
 
-.inputBox.error,
-.messageBox.error {
+#contactMe .inputBox.error,
+#contactMe .messageBox.error {
   border: 1.5px solid var(--my-red);
   border-radius: 8px;
 }
 
-.inputBox.error::placeholder,
-.messageBox.error::placeholder {
+#contactMe .inputBox.error::placeholder,
+#contactMe .messageBox.error::placeholder {
   color: var(--my-red);
 }
 
-.messageBox {
+#contactMe .messageBox {
   height: 175px;
   max-height: none;
   resize: none;
@@ -125,7 +124,7 @@ body {
 
 
 /* ADD ARROW BUTTON FUNCTIONALITY */
-.submitButton {
+#contactMe .submitButton {
   position: relative;
   overflow: hidden;
   height: 37px;
@@ -151,7 +150,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.submitButton::before {
+#contactMe .submitButton::before {
   content: "→";
   font-size: 18px;
   color: black;
@@ -163,20 +162,20 @@ body {
   transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.submitButton:hover {
+#contactMe .submitButton:hover {
   padding-right: 30px;
 }
 
-.submitButton:hover::before {
+#contactMe .submitButton:hover::before {
   right: 15px;
   opacity: 1;
 }
 
-.submitButton:active {
+#contactMe .submitButton:active {
   transform: scale(0.95);
 }
 
-.thankYouMessage {
+#contactMe .thankYouMessage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,6 +187,6 @@ body {
   letter-spacing: var(--font-script-ls);
 }
 
-.thankYouMessage h2, h3 {
+#contactMe .thankYouMessage h2, h3 {
   margin: 10px;
 }
