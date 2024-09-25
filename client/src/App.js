@@ -18,8 +18,8 @@ const App = () => {
       <DottedBackground />
       <Router>
         <Routes>
-          {/* <Route path="/" element={<TitlePage />} /> */}
-          {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
+          <Route path="/" element={<TitlePage />} />
+          <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} />
           <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} />
         </Routes>
       </Router>
