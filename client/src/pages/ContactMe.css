@@ -1,5 +1,7 @@
 @import '../generals/universals.css';
 
+#contactMe * {}
+
 body {
   margin: 0;
   height: 100vh;
@@ -36,14 +38,10 @@ body {
 
 .title {
   font-size: 40px;
-}
-
-.subtitle {
+} .subtitle {
   font-size: 20px;
   padding-left: 30px;
-}
-
-.title, .subtitle {
+} .title, .subtitle {
   margin: 0;
 }
 

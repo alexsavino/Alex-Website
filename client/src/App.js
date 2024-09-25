@@ -9,6 +9,7 @@ import NavBarLayout from './generals/NavBarLayout';
 
 import TitlePage from './pages/TitlePage';
 import ContactMe from './pages/ContactMe';
+import AboutMe from './pages/AboutMe';
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           {/* <Route path="/" element={<TitlePage />} /> */}
           <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} />
+          {/* <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} /> */}
         </Routes>
       </Router>
     </div>

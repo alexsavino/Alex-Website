@@ -109,85 +109,86 @@ const ContactMe = () => {
     }
   };
 
-  /* knsdkjfna */
   return (
-    <div className="pageContainer">
-      <div className="contactMeSign">
-        <p className="title">Contact Me</p>
-        <p className="subtitle">I'd love to connect!</p>
-      </div>
+    <div id="contactMe">
+      <div className="pageContainer">
+        <div className="contactMeSign">
+          <p className="title">Contact Me</p>
+          <p className="subtitle">I'd love to connect!</p>
+        </div>
 
-      <div className="primaryRectangle">
-        {isSubmitted ? (
-          <div className="thankYouMessage">
-            <h2>Thank you for your message!</h2>
-            <h3>I'll reach back out to you shortly.</h3>
-          </div>
-        ) : (
-          <div className="inputContainer">
-            <div className="inputBoxContainer">
-              <label htmlFor="name">Name</label>
-              <input
-                className={`inputBox ${nameError ? 'error' : ''}`}
-                type="text"
-                id="name"
-                name="name"
-                value={name}
-                onChange={(event) => {
-                  setName(event.target.value);
-                  setNameError('');
-                }}
-                placeholder={nameError || 'Jane Doe'}
-                autoComplete="off"
-                required
-                ref={nameInputRef}
-                onTouchStart={(event) => handleSwipe(event, nameInputRef)}
-                onTouchMove={(event) => handleSwipe(event, nameInputRef)}
-              />
+        <div className="primaryRectangle">
+          {isSubmitted ? (
+            <div className="thankYouMessage">
+              <h2>Thank you for your message!</h2>
+              <h3>I'll reach back out to you shortly.</h3>
             </div>
+          ) : (
+            <div className="inputContainer">
+              <div className="inputBoxContainer">
+                <label htmlFor="name">Name</label>
+                <input
+                  className={`inputBox ${nameError ? 'error' : ''}`}
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={(event) => {
+                    setName(event.target.value);
+                    setNameError('');
+                  }}
+                  placeholder={nameError || 'Jane Doe'}
+                  autoComplete="off"
+                  required
+                  ref={nameInputRef}
+                  onTouchStart={(event) => handleSwipe(event, nameInputRef)}
+                  onTouchMove={(event) => handleSwipe(event, nameInputRef)}
+                />
+              </div>
 
-            <div className="inputBoxContainer">
-              <label htmlFor="email">Email</label>
-              <input
-                className={`inputBox ${emailError ? 'error' : ''}`}
-                type="text"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                  setEmailError('');
-                }}
-                placeholder={emailError || 'email@gmail.com'}
-                autoComplete="off"
-                required
-                ref={emailInputRef}
-                onTouchStart={(event) => handleSwipe(event, emailInputRef)}
-                onTouchMove={(event) => handleSwipe(event, emailInputRef)}
-              />
+              <div className="inputBoxContainer">
+                <label htmlFor="email">Email</label>
+                <input
+                  className={`inputBox ${emailError ? 'error' : ''}`}
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                    setEmailError('');
+                  }}
+                  placeholder={emailError || 'email@gmail.com'}
+                  autoComplete="off"
+                  required
+                  ref={emailInputRef}
+                  onTouchStart={(event) => handleSwipe(event, emailInputRef)}
+                  onTouchMove={(event) => handleSwipe(event, emailInputRef)}
+                />
+              </div>
+
+              <div className="inputBoxContainer">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  className={`inputBox messageBox ${messageError ? 'error' : ''}`}
+                  id="message"
+                  value={message}
+                  onChange={(event) => {
+                    setMessage(event.target.value);
+                    event.target.style.height = 'auto';
+                    event.target.style.height = `${Math.max(event.target.scrollHeight, 175)}px`;
+                    setMessageError('');
+                  }}
+                  placeholder={messageError || 'Type your message here.'}
+                  autoComplete="off"
+                  required
+                ></textarea>
+              </div>
+
+              <button className="submitButton" onClick={handleSendMessage}>Submit</button>
             </div>
-
-            <div className="inputBoxContainer">
-              <label htmlFor="message">Message</label>
-              <textarea
-                className={`inputBox messageBox ${messageError ? 'error' : ''}`}
-                id="message"
-                value={message}
-                onChange={(event) => {
-                  setMessage(event.target.value);
-                  event.target.style.height = 'auto';
-                  event.target.style.height = `${Math.max(event.target.scrollHeight, 175)}px`;
-                  setMessageError('');
-                }}
-                placeholder={messageError || 'Type your message here.'}
-                autoComplete="off"
-                required
-              ></textarea>
-            </div>
-
-            <button className="submitButton" onClick={handleSendMessage}>Submit</button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
