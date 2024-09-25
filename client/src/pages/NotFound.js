@@ -3,7 +3,7 @@ import './NotFound.css';
 
 const NotFound = () => {
   return (
-    <div className="pageContainer">
+    <div id="notFound" className="pageContainer">
       <div className="textContainer">
         <p className="subtitle">
           404 Error:

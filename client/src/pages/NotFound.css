@@ -1,7 +1,7 @@
 @import '../generals/universals.css';
 
 /* CONTAINER PROPERTIES */
-.pageContainer {
+#notFound .pageContainer {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -13,9 +13,10 @@
 
   justify-content: center;
   align-items: center;
+  background-color: purple;
 }
 
-.textContainer {
+#notFound .textContainer {
   position: absolute;
   width: fit-content;
   min-width: 651px;
@@ -28,10 +29,10 @@
 }
 
 /* TEXT PROPERTIES */
-.title {
+#notFound .title {
   color: black;
   font-size: 40px;
-} .subtitle {
+} #notFound .subtitle {
   color: var(--my-red);
   font-size: 20px;
 }
