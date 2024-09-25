@@ -10,6 +10,7 @@ import NavBarLayout from './generals/NavBarLayout';
 import TitlePage from './pages/TitlePage';
 import ContactMe from './pages/ContactMe';
 import AboutMe from './pages/AboutMe';
+import NotFound from './pages/NotFound';
 
 const App = () => {
 
@@ -21,6 +22,8 @@ const App = () => {
           <Route path="/" element={<TitlePage />} />
           <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} />
           <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

@@ -25,7 +25,7 @@ const NavBar = () => {
           <div className="buttonWrapper">
             <button className="mainButton">Social</button>  
             <div className="dropdown">
-              <a href="https://www.linkedin.com/in/alexandra-savino-879146200/" target="_blank" rel="noopener noreferrer" className="subButton">
+              <a href="https://www.linkedin.com/in/alexandravsavino" target="_blank" rel="noopener noreferrer" className="subButton">
                 <img src="/linkedin-logo.png" alt="LinkedIn Logo" className="linkedinLogo"/>
                 LinkedIn
               </a>
