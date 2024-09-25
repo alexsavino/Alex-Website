@@ -1,0 +1,141 @@
+@import '../generals/universals.css';
+
+
+/* CONTACT ME MANILA LABEL */
+.pageContainer {
+  position: relative;
+}
+
+.aboutMeSign {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  position: absolute;
+  top: -30px;
+  left: 90px;
+  width: auto;
+
+  color: var(--my-red);
+  background-color: var(--my-yellow);
+  border-radius: 10px;
+
+  font-family: var(--font-script);
+  font-weight: bold;
+  letter-spacing: var(--font-script-ls);
+
+  z-index: 1;
+}
+
+.title {
+  font-size: 40px;
+} .subtitle {
+  font-size: 20px;
+  padding-left: 30px;
+} .title, .subtitle {
+  margin: 0;
+}
+
+
+/* GREEN BACKGROUND */
+.primaryRectangle {
+  flex: 1;
+  flex-shrink: 0;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 50px;
+  margin-bottom: 74px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--my-green);
+  border: none;
+  border-radius: 10px;
+  padding: 55px 0;
+
+  color: white;
+  font-family: var(--font-news-cycle);
+  letter-spacing: var(--font-news-cycle-ls);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.tempImage {
+  width: 400px;
+  height: 400px;
+  background-color: var(--my-yellow);
+  flex-shrink: 0;
+}
+
+
+
+/* TEXT & IMAGE */
+@media (max-width: 1150px) {
+  .introWrapper {
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1151px) {
+  .introWrapper {
+    gap: calc(30px + (145 - 30) * ((100vw - 1151px) / (1400 - 1151)));
+  }
+}
+
+@media (min-width: 1400px) {
+  .introWrapper {
+    gap: 145px;
+  }
+}
+
+
+.imageAndTextWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+} 
+.introParagraph {
+  flex-shrink: 0;
+}
+
+
+.longerParagraph {
+  width: 935px;
+}
+
+.transitionLine {
+  padding: 40px;
+}
+
+
+
+/* BUTTONS */
+.resumeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.3s ease;
+}
+
+.resumeButton:hover {
+  opacity: 0.7;
+}
+
+.resumeButton:active {
+  transform: scale(0.95);
+}
