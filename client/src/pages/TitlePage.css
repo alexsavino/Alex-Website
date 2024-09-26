@@ -2,18 +2,51 @@
 
 
 /****** LARGER CONTAINERS ******/
-.container {
-  position: absolute;
+.TITLEPAGE_pageContainer {
+  width: 100vw;
+  min-width: 1100px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
   display: flex;
+  flex-direction: row;
+
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  min-width: 100%;
-  gap: clamp(0px, 5vw, 100px);
 }
 
+@media (max-width: 1100px) {
+  .TITLEPAGE_contentWrapper {
+    min-width: 950px !important;
+  }
+}
 
-.rightSideContainer {
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .TITLEPAGE_contentWrapper {
+    width: calc(950px + (1000 - 950) * ((100vw - 1100px) / (1400 - 1100))) !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .TITLEPAGE_contentWrapper {
+    width: 1000px !important;
+  }
+}
+
+.TITLEPAGE_contentWrapper {
+  
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.TITLEPAGE_rightSideContainer {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -26,13 +59,13 @@
 
 
 /****** RED RECTANGLE CIRCUIT ******/
-.redContainer {
+.TITLEPAGE_redContainer {
   position: relative;
   min-width: 569px;
   height: 548px;
 }
 
-.circuitRedRectangle {
+.TITLEPAGE_circuitRedRectangle {
   position: absolute;
   width: 393px;
   height: 527px;
@@ -40,7 +73,7 @@
   border-radius: 10px;
 }
   
-.circuitSchematicPNG {
+.TITLEPAGE_circuitSchematicPNG {
   position: absolute;
   top: 8px;
   left: -10px;
@@ -53,7 +86,7 @@
 
 
 /****** INTRODUCTORY TEXT ******/
-.textContainer {
+.TITLEPAGE_textContainer {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -61,61 +94,56 @@
   letter-spacing: var(--font-script-ls);
 }
 
-.SWEIntroContainer {
+.TITLEPAGE_SWEIntroContainer {
   display: inline-block;
   line-height: 0.12;
 }
 
-.SWELine {
+.TITLEPAGE_SWELine {
   font-family: var(--font-computer);
   color: black;
   text-align: center;
-}
-.SWELine.small {
+} .TITLEPAGE_SWELine.small {
   font-size: 25px;
-}
-.SWELine.large {
+} .TITLEPAGE_SWELine.large {
   font-size: 30px;
 }
 
-.myName {
+.TITLEPAGE_myName {
   color: var(--my-red);
-  font-weight: Bold;
+  font-weight: bold;
 }
 
 
-.astroIntroContainer {
+.TITLEPAGE_astroIntroContainer {
   display: inline-block;
   line-height: 0.1;
-  /* background-color: red; */
 }
 
-.astroLine {
+.TITLEPAGE_astroLine {
   font-family: var(--font-script);
   font-weight: bold;
   color: black;
   text-align: center;
-}
-.astroLine.large {
+} .TITLEPAGE_astroLine.large {
   font-size: 21px;
-}
-.astroLine.small {
+} .TITLEPAGE_astroLine.small {
   font-size: 15px;
 }
 
 
 /****** CV+CONTACT BUTTONS ******/
-.buttonContainer {
+.TITLEPAGE_buttonContainer {
   display: flex;
   justify-content: space-between;
   width: 310px;
   z-index: 1;
 }
 
-.titleButtons {
+.TITLEPAGE_titleButtons {
   position: relative;
   overflow: hidden;
-  height: 40px;
+  min-height: 40px;
 
   display: flex;
   justify-content: center;
@@ -135,7 +163,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.titleButtons::before {
+.TITLEPAGE_titleButtons::before {
   content: "→";
   font-size: 18px;
   color: black;
@@ -147,37 +175,31 @@
   transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.titleButtons:hover {
+.TITLEPAGE_titleButtons:hover {
   padding-right: 30px;
-}
-
-.titleButtons:hover::before {
+} .TITLEPAGE_titleButtons:hover::before {
   right: 15px;
   opacity: 1;
-}
-
-.titleButtons:active {
+} .TITLEPAGE_titleButtons:active {
   transform: scale(0.95);
 }
 
-.downloadCVButton {
-  width: 150px;
-}
-
-.contactMeButton {
-  width: 143px;
+.TITLEPAGE_downloadCVButton {
+  min-width: 150px;
+} .TITLEPAGE_contactMeButton {
+  min-width: 143px;
 }
 
 
 
 /****** YELLOW RECTANGLE PNG ******/
-.yellowContainer  {
+.TITLEPAGE_yellowContainer  {
   position: relative;
   height: 294px;
   width: 244px;
 }
 
-.pngYellowRectangle {
+.TITLEPAGE_pngYellowRectangle {
   position: absolute;
   top: 65px;
   width: 197px;
@@ -186,7 +208,7 @@
   border-radius: 8px;
 }
 
-.maltaBoardPNG {
+.TITLEPAGE_maltaBoardPNG {
   position: absolute; 
   top: -126px;
   left: -20px;

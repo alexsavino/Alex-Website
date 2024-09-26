@@ -2,11 +2,11 @@
 
 
 /* CONTACT ME MANILA LABEL */
-.pageContainer {
+.ABOUTME_pageContainer {
   position: relative;
 }
 
-.aboutMeSign {
+.ABOUTME_aboutMeSign {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -27,18 +27,18 @@
   z-index: 1;
 }
 
-.title {
+.ABOUTME_title {
   font-size: 40px;
-} .subtitle {
+} .ABOUTME_subtitle {
   font-size: 20px;
   padding-left: 30px;
-} .title, .subtitle {
+} .ABOUTME_title, .ABOUTME_subtitle {
   margin: 0;
 }
 
 
 /* GREEN BACKGROUND */
-.primaryRectangle {
+.ABOUTME_primaryRectangle {
   flex: 1;
   flex-shrink: 0;
   margin-left: 60px;
@@ -63,11 +63,11 @@
   line-height: 1.5;
 }
 
-.bold {
+.ABOUTME_bold {
   font-weight: 500;
 }
 
-.tempImage {
+.ABOUTME_tempImage {
   width: 400px;
   height: 400px;
   background-color: var(--my-yellow);
@@ -78,25 +78,25 @@
 
 /* TEXT & IMAGE */
 @media (max-width: 1100px) {
-  .imageAndTextWrapper {
+  .ABOUTME_imageAndTextWrapper {
     width: 850px !important;
   }
 }
 
 @media (min-width: 1101px) and (max-width: 1399px) {
-  .imageAndTextWrapper {
+  .ABOUTME_imageAndTextWrapper {
     width: calc(850px + (1000 - 850) * ((100vw - 1100px) / (1400 - 1100))) !important;
   }
 }
 
 @media (min-width: 1400px) {
-  .imageAndTextWrapper {
+  .ABOUTME_imageAndTextWrapper {
     width: 1000px !important;
   }
 }
 
 
-.imageAndTextWrapper {
+.ABOUTME_imageAndTextWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -104,23 +104,23 @@
   width: fit-content;
   height: fit-content;
 } 
-.introParagraph {
+.ABOUTME_introParagraph {
   flex-shrink: 0;
 }
 
 
-.longerParagraph {
+.ABOUTME_ongerParagraph {
   width: 935px;
 }
 
-/* .transitionLine {
+/* .ABOUTME_transitionLine {
   padding: 40px;
 } */
 
 
 
 /* BUTTONS */
-.insideButton {
+.ABOUTME_insideButton {
   background: none;
   border: none;
   padding: 0;
@@ -131,12 +131,12 @@
   font-style: italic;
   text-decoration: underline;
   transition: all 0.3s ease;
-} .insideButton:hover {
+} .ABOUTME_insideButton:hover {
   opacity: 0.7;
-} .insideButton:active {
+} .ABOUTME_insideButton:active {
   transform: scale(0.95);
 }
 
-a {
+#aboutMe a {
   color: white;
 }

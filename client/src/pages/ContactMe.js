@@ -110,21 +110,21 @@ const ContactMe = () => {
   };
 
   return (
-    <div id="contactMe" className="pageContainer">
-      <div className="contactMeSign">
-        <p className="title">Contact Me</p>
-        <p className="subtitle">I'd love to connect!</p>
+    <div id="contactMe" className="CONTACTME_pageContainer">
+      <div className="CONTACTME_contactMeSign">
+        <p className="CONTACTME_title">Contact Me</p>
+        <p className="CONTACTME_subtitle">I'd love to connect!</p>
       </div>
 
-      <div className="primaryRectangle">
+      <div className="CONTACTME_primaryRectangle">
         {isSubmitted ? (
-          <div className="thankYouMessage">
+          <div className="CONTACTME_thankYouMessage">
             <h2>Thank you for your message!</h2>
             <h3>I'll reach back out to you shortly.</h3>
           </div>
         ) : (
-          <div className="inputContainer">
-            <div className="inputBoxContainer">
+          <div className="CONTACTME_inputContainer">
+            <div className="CONTACTME_inputBoxContainer">
               <label htmlFor="name">Name</label>
               <input
                 className={`inputBox ${nameError ? 'error' : ''}`}
@@ -145,7 +145,7 @@ const ContactMe = () => {
               />
             </div>
 
-            <div className="inputBoxContainer">
+            <div className="CONTACTME_inputBoxContainer">
               <label htmlFor="email">Email</label>
               <input
                 className={`inputBox ${emailError ? 'error' : ''}`}
@@ -166,7 +166,7 @@ const ContactMe = () => {
               />
             </div>
 
-            <div className="inputBoxContainer">
+            <div className="CONTACTME_inputBoxContainer">
               <label htmlFor="message">Message</label>
               <textarea
                 className={`inputBox messageBox ${messageError ? 'error' : ''}`}
@@ -184,7 +184,7 @@ const ContactMe = () => {
               ></textarea>
             </div>
 
-            <button className="submitButton" onClick={handleSendMessage}>Submit</button>
+            <button className="CONTACTME_submitButton" onClick={handleSendMessage}>Submit</button>
           </div>
         )}
       </div>
