@@ -127,7 +127,7 @@ const ContactMe = () => {
             <div className="CONTACTME_inputBoxContainer">
               <label htmlFor="name">Name</label>
               <input
-                className={`inputBox ${nameError ? 'error' : ''}`}
+                className={`CONTACTME_inputBox ${nameError ? 'error' : ''}`}
                 type="text"
                 id="name"
                 name="name"
@@ -148,7 +148,7 @@ const ContactMe = () => {
             <div className="CONTACTME_inputBoxContainer">
               <label htmlFor="email">Email</label>
               <input
-                className={`inputBox ${emailError ? 'error' : ''}`}
+                className={`CONTACTME_inputBox ${emailError ? 'error' : ''}`}
                 type="text"
                 id="email"
                 name="email"
@@ -169,7 +169,7 @@ const ContactMe = () => {
             <div className="CONTACTME_inputBoxContainer">
               <label htmlFor="message">Message</label>
               <textarea
-                className={`inputBox messageBox ${messageError ? 'error' : ''}`}
+                className={`CONTACTME_inputBox CONTACTME_messageBox ${messageError ? 'error' : ''}`}
                 id="message"
                 value={message}
                 onChange={(event) => {
