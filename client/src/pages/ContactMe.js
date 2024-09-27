@@ -116,12 +116,14 @@ const ContactMe = () => {
 
   return (
     <div id="contactMe" className="CONTACTME_pageContainer">
+
       <div className="CONTACTME_contactMeSign">
         <p className="CONTACTME_title">Contact Me</p>
         <p className="CONTACTME_subtitle">I'd love to connect!</p>
       </div>
 
       <div className="CONTACTME_primaryRectangle">
+      
         {isSubmitted ? (
           <div className="CONTACTME_thankYouMessage">
             <h2>Thank you for your message!</h2>

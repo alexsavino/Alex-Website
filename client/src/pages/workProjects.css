@@ -1,0 +1,65 @@
+@import '../generals/universals.css';
+
+/* CONTACT ME MANILA LABEL */
+.WORKPROJECTS_pageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100px + var(--WORKPROJECTS-primary-rectangle-height) + 74px);
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.WORKPROJECTS_contactMeSign {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  
+    position: absolute;
+    top: 66px;
+    left: 90px;
+    width: auto;
+  
+    background-color: var(--my-red);
+    border-radius: 10px;
+  
+    font-family: var(--font-script);
+    font-weight: bold;
+    letter-spacing: var(--font-script-ls);
+  
+    z-index: 1;
+  }
+  
+  .WORKPROJECTS_title {
+    font-size: 40px;
+  }
+  
+  .WORKPROJECTS_subtitle {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+  
+  .WORKPROJECTS_title, 
+  .WORKPROJECTS_subtitle {
+    margin: 0;
+  }
+  
+  /* BEIGE BACKGROUND */
+  .WORKPROJECTS_primaryRectangle {
+    flex: 1;
+    flex-grow: 1;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 100px;
+    margin-bottom: 74px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--my-blue);
+    border: none;
+    border-radius: 10px;
+    padding: 55px 0;
+    color: black;
+    box-sizing: border-box;
+  }

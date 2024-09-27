@@ -54,6 +54,7 @@
   margin-bottom: 74px; 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: var(--my-beige);
   border: none;
@@ -66,13 +67,13 @@
 /* MANAGING INPUT CONTAINERS */
 .CONTACTME_inputContainer {
   position: relative;
-  transform: translateY(calc(-1vw * 0.5 + 20px));
+  /* transform: translateY(calc(-1vw * 0.5 + 20px)); */
   width: fit-content;
-  min-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  /* background-color: orange; */
 }
 
 .CONTACTME_inputBoxContainer {

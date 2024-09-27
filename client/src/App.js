@@ -10,6 +10,8 @@ import NavBarLayout from './generals/NavBarLayout';
 import TitlePage from './pages/TitlePage';
 import ContactMe from './pages/ContactMe';
 import AboutMe from './pages/AboutMe';
+import WorkProjects from './pages/WorkProjects';
+import CreativeProjects from './pages/CreativeProjects';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -24,7 +26,8 @@ const App = () => {
           {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
           <Route path="/about-me" element={<AboutMe />} />
           {/* <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} /> */}
-
+          <Route path="/recent-projects" element={<WorkProjects />}/>
+          <Route path="/creative-projects" element={<CreativeProjects />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
