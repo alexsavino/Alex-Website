@@ -20,8 +20,10 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<TitlePage />} />
-          <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} />
-          <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} />
+          <Route path="/contact-me" element={<ContactMe />} />
+          {/* <Route path="/contact-me" element={<NavBarLayout><ContactMe /></NavBarLayout>} /> */}
+          <Route path="/about-me" element={<AboutMe />} />
+          {/* <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} /> */}
 
           <Route path="*" element={<NotFound />} />
         </Routes>

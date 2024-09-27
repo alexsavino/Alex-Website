@@ -4,7 +4,7 @@ import './TitlePage.css';
 
 
 const TitlePage = () => {
-  
+
   /* TO MAKE THE 'I'M A SOFTWARE ENGINEER' ANIMATION */
   const [text] = useState('I\'m a SOFTWARE ENGINEER');
   const [currentIndex, setCurrentIndex] = useState(0);

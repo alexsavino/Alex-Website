@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './ContactMe.css';
 
 const ContactMe = () => {
@@ -102,12 +102,17 @@ const ContactMe = () => {
     if (event.touches.length === 2) {
       const deltaX = event.touches[0].clientX - event.touches[1].clientX;
       if (deltaX > 0) {
-        inputRef.current.scrollLeft += 20; // Adjust scroll value as needed
+        inputRef.current.scrollLeft += 20;
       } else if (deltaX < 0) {
-        inputRef.current.scrollLeft -= 20; // Adjust scroll value as needed
+        inputRef.current.scrollLeft -= 20;
       }
     }
   };
+
+  useEffect(() => {
+    const height = document.querySelector('.CONTACTME_primaryRectangle').offsetHeight;
+    document.documentElement.style.setProperty('--CONTACTME-primary-rectangle-height', `${height}px`);
+  }, [isSubmitted, name, email, message]);
 
   return (
     <div id="contactMe" className="CONTACTME_pageContainer">

@@ -1,16 +1,13 @@
 @import '../generals/universals.css';
 
-#contactMe body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 /* CONTACT ME MANILA LABEL */
 .CONTACTME_pageContainer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100px + var(--CONTACTME-primary-rectangle-height) + 74px);
+  min-height: 100vh;
+  overflow: auto;
 }
 
 .CONTACTME_contactMeSign {
@@ -19,7 +16,7 @@
   padding: 10px;
 
   position: absolute;
-  top: -30px;
+  top: 66px;
   left: 90px;
   width: auto;
 
@@ -33,13 +30,16 @@
   z-index: 1;
 }
 
-
 .CONTACTME_title {
   font-size: 40px;
-} .CONTACTME_subtitle {
+}
+
+.CONTACTME_subtitle {
   font-size: 20px;
   padding-left: 30px;
-} .CONTACTME_title, 
+}
+
+.CONTACTME_title, 
 .CONTACTME_subtitle {
   margin: 0;
 }
@@ -47,9 +47,10 @@
 /* BEIGE BACKGROUND */
 .CONTACTME_primaryRectangle {
   flex: 1;
+  flex-grow: 1;
   margin-left: 60px;
   margin-right: 60px;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 74px; 
   display: flex;
   flex-direction: column;
@@ -59,6 +60,7 @@
   border-radius: 10px;
   padding: 55px 0;
   color: black;
+  box-sizing: border-box;
 }
 
 /* MANAGING INPUT CONTAINERS */
@@ -91,7 +93,6 @@
 /* MANAGING THE PAGE'S INPUT CONTENT */
 .CONTACTME_inputBox, 
 .CONTACTME_messageBox {
-  /* width: clamp(20px, 50vw, 622px); */
   width: 600px;
   min-height: 28px;
   padding: 5px;
@@ -106,6 +107,12 @@
   font-family: var(--font-news-cycle);
   font-size: 17px;
   letter-spacing: var(--font-news-cycle-ls);
+}
+
+.CONTACTME_inputBox:focus,
+.CONTACTME_inputBox:focus {
+  border-color: var(--my-green);
+  outline: none;
 }
 
 .CONTACTME_inputBox.error, 
@@ -124,7 +131,6 @@
   max-height: none;
   resize: none;
 }
-
 
 /* ADD ARROW BUTTON FUNCTIONALITY */
 .CONTACTME_submitButton {

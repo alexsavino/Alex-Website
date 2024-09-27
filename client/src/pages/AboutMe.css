@@ -4,6 +4,11 @@
 /* CONTACT ME MANILA LABEL */
 .ABOUTME_pageContainer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100px + var(--ABOUTME-primary-rectangle-height) + 74px);
+  min-height: 100vh;
+  overflow: auto;
 }
 
 .ABOUTME_aboutMeSign {
@@ -12,7 +17,7 @@
   padding: 10px;
 
   position: absolute;
-  top: -30px;
+  top: 66px;
   left: 90px;
   width: auto;
 
@@ -40,10 +45,11 @@
 /* GREEN BACKGROUND */
 .ABOUTME_primaryRectangle {
   flex: 1;
+  flex-grow: 1;
   flex-shrink: 0;
   margin-left: 60px;
   margin-right: 60px;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 74px;
 
   display: flex;

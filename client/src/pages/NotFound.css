@@ -26,7 +26,6 @@
   justify-content: center;
   align-items: center;
 
-  /* background-color: blue; */
   font-family: var(--font-script);
   font-weight: bold;
   letter-spacing: var(--font-script-ls);
@@ -49,44 +48,48 @@
 .NOTFOUND_button {
   position: relative;
   overflow: hidden;
-  min-height: 40px;
-  min-width: 156px;
+  min-width: 152px;
+  height: 43px;
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 10px;
   text-align: center;
 
+  padding-top: 3.5px;
   background-color: var(--my-beige);
   border: none;
   border-radius: 8px;
   font-family: var(--font-computer);
-  font-size: 21px;
+  font-size: 20px;
   color: black;
   line-height: 2;
   
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin: 30px;
+  margin: 25px;
 }
 
 .NOTFOUND_button::before {
-  content: "→";
-  font-size: 18px;
-  color: black;
+  content: '';
   position: absolute;
-  right: 10px;
-  top: 21px;
+  right: 12px;
+  top: 50%;
   transform: translateY(-50%);
   opacity: 0;
   transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  background-image: url('../../public/arrow.png');
+  background-size: 22px auto;
+  width: 23px;
+  height: 16px;
+  display: block;
 }
 
 .NOTFOUND_button:hover {
-  padding-right: 30px;
+  padding-right: 22px;
 } .NOTFOUND_button:hover::before {
-  right: 15px;
+  right: 9px;
   opacity: 1;
 } .NOTFOUND_button:active {
   transform: scale(0.95);

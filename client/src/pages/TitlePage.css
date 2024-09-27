@@ -136,26 +136,26 @@
 .TITLEPAGE_buttonContainer {
   display: flex;
   justify-content: space-between;
-  width: 310px;
+  width: 305px;
   z-index: 1;
 }
 
 .TITLEPAGE_titleButtons {
   position: relative;
   overflow: hidden;
-  min-height: 40px;
+  height: 43px;
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 10px;
   text-align: center;
 
+  padding-top: 4px;
   background-color: var(--my-beige);
   border: none;
   border-radius: 8px;
   font-family: var(--font-computer);
-  font-size: 21px;
+  font-size: 20px;
   color: black;
   line-height: 2;
   
@@ -164,30 +164,34 @@
 }
 
 .TITLEPAGE_titleButtons::before {
-  content: "→";
-  font-size: 18px;
-  color: black;
+  content: '';
   position: absolute;
-  right: 10px;
-  top: 21px;
+  right: 12px;
+  top: 50%;
   transform: translateY(-50%);
   opacity: 0;
   transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  background-image: url('../../public/arrow.png');
+  background-size: 22px auto;
+  width: 23px;
+  height: 16px;
+  display: block;
 }
 
 .TITLEPAGE_titleButtons:hover {
-  padding-right: 30px;
+  padding-right: 22px;
 } .TITLEPAGE_titleButtons:hover::before {
-  right: 15px;
+  right: 9px;
   opacity: 1;
 } .TITLEPAGE_titleButtons:active {
   transform: scale(0.95);
 }
 
 .TITLEPAGE_downloadCVButton {
-  min-width: 150px;
+  min-width: 146px;
 } .TITLEPAGE_contactMeButton {
-  min-width: 143px;
+  min-width: 139px;
 }
 
 

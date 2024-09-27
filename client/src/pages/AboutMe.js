@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import './AboutMe.css';
 
 
 const AboutMe = () => {
     
+  useEffect(() => {
+    const updateHeight = () => {
+      const height = document.querySelector('.ABOUTME_primaryRectangle')?.offsetHeight || 0;
+      document.documentElement.style.setProperty('--ABOUTME-primary-rectangle-height', `${height}px`);
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
+
   return (
     <div id="aboutMe" className="ABOUTME_pageContainer">
       <div className="ABOUTME_aboutMeSign">
