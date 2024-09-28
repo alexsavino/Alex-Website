@@ -11,55 +11,132 @@
 }
 
 .WORKPROJECTS_contactMeSign {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  position: absolute;
+  top: 66px;
+  left: 90px;
+  width: auto;
+
+  color: white;
+  background-color: var(--my-red);
+  border-radius: 10px;
+
+  font-family: var(--font-script);
+  font-weight: bold;
+  letter-spacing: var(--font-script-ls);
+
+  z-index: 1;
+}
+
+.WORKPROJECTS_title {
+  font-size: 40px;
+}
+
+.WORKPROJECTS_subtitle {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.WORKPROJECTS_title, 
+.WORKPROJECTS_subtitle {
+  margin: 0;
+}
   
-    position: absolute;
-    top: 66px;
-    left: 90px;
-    width: auto;
-  
-    background-color: var(--my-red);
-    border-radius: 10px;
-  
-    font-family: var(--font-script);
-    font-weight: bold;
-    letter-spacing: var(--font-script-ls);
-  
-    z-index: 1;
-  }
-  
-  .WORKPROJECTS_title {
-    font-size: 40px;
-  }
-  
-  .WORKPROJECTS_subtitle {
-    font-size: 20px;
-    padding-left: 30px;
-  }
-  
-  .WORKPROJECTS_title, 
-  .WORKPROJECTS_subtitle {
-    margin: 0;
-  }
-  
-  /* BEIGE BACKGROUND */
-  .WORKPROJECTS_primaryRectangle {
-    flex: 1;
-    flex-grow: 1;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 100px;
-    margin-bottom: 74px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--my-blue);
-    border: none;
-    border-radius: 10px;
-    padding: 55px 0;
-    color: black;
-    box-sizing: border-box;
-  }
+/* BEIGE BACKGROUND */
+.WORKPROJECTS_primaryRectangle {
+  flex: 1;
+  flex-grow: 1;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 100px;
+  margin-bottom: 74px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: var(--my-blue);
+  border: none;
+  border-radius: 10px;
+  padding: 55px 0;
+  color: black;
+  box-sizing: border-box;
+}
+
+/* ACTUAL PROJECT CONTAINERS */
+
+.WORKPROJECTS_projectRowContainer {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: first baseline;
+
+  color: white;
+  font-family: var(--font-news-cycle);
+  letter-spacing: var(--font-news-cycle-ls);
+
+  gap: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.WORKPROJECTS_rowLeft {
+  min-width: 80px;
+  font-size: 20px;
+  background-color: orange;
+}
+
+.WORKPROJECTS_rowRight {
+  max-width: 450px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  background-color: purple;
+}
+
+.WORKPROJECTS_projectTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+.WORKPROJECTS_description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+
+.WORKPROJECTS_skillsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 7px;
+  background-color: yellow;
+  width: 300px;
+  overflow-x: auto;
+  white-space: nowrap; /* Ensure content stays in a single line */
+  padding-bottom: 10px; /* Adds padding to the bottom to avoid scrollbar overlapping */
+}
+
+.WORKPROJECTS_skillsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.WORKPROJECTS_skillsContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.WORKPROJECTS_skillBox {
+  background-color: var(--my-grey);
+  padding: 8px 9px;
+  border-radius: 6px;
+
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+
+  text-align: center;
+  white-space: nowrap;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}

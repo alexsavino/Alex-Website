@@ -13,3 +13,4 @@ client/node_modules/.cache/babel-loader/03dac812195111c0a9a55a5bb7efa56841c8ba3c
 client/node_modules/.cache/babel-loader/04cefa991e0dc1af9b192f0b51102822ef3073a3d1f8d38cf0dbf683595c0b37.json
 client/node_modules/.cache/babel-loader/047fbbe876c24a701ed911fdc73080b86ea89d325b0d9f5d112c668abea2edaf.json
 /client
+/node_modules
