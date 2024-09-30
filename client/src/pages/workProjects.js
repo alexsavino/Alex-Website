@@ -10,8 +10,8 @@ const WorkProjects = () => {
       const height = document.querySelector('.WORKPROJECTS_primaryRectangle')?.offsetHeight || 0;
       document.documentElement.style.setProperty('--WORKPROJECTS-primary-rectangle-height', `${height}px`);
     };
-
-    updateHeight();
+   // dhdfghdgfhf
+    updateHeight(); 
     window.addEventListener('resize', updateHeight);
     
     const fetchProjects = async () => {
