@@ -58,34 +58,34 @@ const WorkProjects = () => {
       </div>
 
       <div className="WORKPROJECTS_primaryRectangle">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="WORKPROJECTS_projectRowContainer"
-            onClick={() => handleProjectClick(project.github_link)}>
+        <div className="WORKPROJECTS_allProjectsContainer">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="WORKPROJECTS_projectRowContainer"
+              onClick={() => handleProjectClick(project.github_link)}>
 
-            <p className="WORKPROJECTS_rowLeft">{formatDate(project.date)}</p>
-            <div className="WORKPROJECTS_rowRight">
-              <p className="WORKPROJECTS_projectTitle">{project.title}</p>
-              {/* <p>{project.skills.join(', ')}</p> */}
+              <p className="WORKPROJECTS_rowLeft">{formatDate(project.date)}</p>
+              <div className="WORKPROJECTS_rowRight">
+                <p className="WORKPROJECTS_projectTitle">{project.title}</p>
+                {/* <p>{project.skills.join(', ')}</p> */}
 
-              <div className="WORKPROJECTS_skillsContainer">
-                {project.skills.map((skill, index) => (
-                  <span key={index} className="WORKPROJECTS_skillBox">
-                    {skill}
-                  </span>
-                ))}
+                <div className="WORKPROJECTS_skillsContainer">
+                  {project.skills.map((skill, index) => (
+                    <span key={index} className="WORKPROJECTS_skillBox">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="WORKPROJECTS_description">{project.description}</p>
+                {project.associated_image && <img src={project.associated_image} alt={project.title} />}
+                
+                <hr className="horizontalLine" />
               </div>
-
-              <p className="WORKPROJECTS_description">{project.description}</p>
-              {project.associated_image && <img src={project.associated_image} alt={project.title} />}
-              
-            </div>
-
-            <hr className="horizontalLine" />
-          </div> 
-        ))}
-        
+            </div> 
+          ))}
+        </div>
       </div>
     </div>
   );
