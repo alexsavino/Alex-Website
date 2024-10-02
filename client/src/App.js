@@ -12,6 +12,7 @@ import ContactMe from './pages/ContactMe';
 import AboutMe from './pages/AboutMe';
 import WorkProjects from './pages/WorkProjects';
 import CreativeProjects from './pages/CreativeProjects';
+import TechnicalSkills from '.pages/TechnicalSkills'
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           {/* <Route path="/about-me" element={<NavBarLayout><AboutMe /></NavBarLayout>} /> */}
           <Route path="/recent-projects" element={<WorkProjects />}/>
           <Route path="/creative-projects" element={<CreativeProjects />} />
+          <Route path="/technical-skills" element={<TechnicalSkills />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
