@@ -73,7 +73,8 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  /* background-color: orange; */
+  /* background-color: purple; */
+  top: 17px;
 }
 
 .CONTACTME_inputBoxContainer {
@@ -137,47 +138,49 @@
 .CONTACTME_submitButton {
   position: relative;
   overflow: hidden;
-  height: 37px;
+  height: 43px;
   width: 115px;
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 10px;
   text-align: center;
 
+  padding-top: 2.3px;
   background-color: var(--my-beige);
-  border: solid;
-  border-color: var(--my-darker-grey);
-  border-width: 1.5px;
+  border: 1.5px solid var(--my-darker-grey);
   border-radius: 8px;
-
-  font-size: 18px;
+  font-family: var(--font-computer);
+  font-size: 20px;
   color: black;
-  line-height: 1.85;
+  line-height: 2;
   
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .CONTACTME_submitButton::before {
-  content: "→";
-  font-size: 18px;
-  color: black;
+  content: '';
   position: absolute;
-  right: 10px;
-  top: 16px;
+  right: 12px;
+  top: 50%;
   transform: translateY(-50%);
   opacity: 0;
   transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  background-image: url('../../public/arrow.png');
+  background-size: 22px auto;
+  width: 23px;
+  height: 16px;
+  display: block;
 }
 
 .CONTACTME_submitButton:hover {
-  padding-right: 30px;
+  padding-right: 22px;
 }
 
 .CONTACTME_submitButton:hover::before {
-  right: 15px;
+  right: 9px;
   opacity: 1;
 }
 

@@ -54,25 +54,90 @@
   margin-top: 100px;
   margin-bottom: 74px; 
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   background-color: var(--my-blue);
   border: none;
   border-radius: 10px;
   color: black;
 }
 
-/* ACTUAL PROJECT CONTAINERS */
 
-.WORKPROJECTS_allProjectsContainer {
-  background-color: black;
+/* FOR THE SEARCH BAR ABOVE */
+.WORKPROJECTS_searchButtonsContainer {
+  position: relative;
+  
   width: fit-content;
-  height: 500px;
-  margin: 45px;
+  display: flex;
+  gap: 7px;
+  margin-bottom: 15px;
+ }
+
+.WORKPROJECTS_selectedSkills {
+  color: white;
+  font-family: var(--font-script);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: var(--font-script-ls);
 }
 
+.WORKPROJECTS_selectedSkills p {
+  margin: 0;
+  margin-bottom: 16px;
+  position: relative;
+  left: -5px;
+}
+
+
+/* ACTUAL PROJECT CONTAINERS */
+@media (max-width: 1100px) {
+  .WORKPROJECTS_contentContainer {
+    gap: 0px !important;
+  }
+} 
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .WORKPROJECTS_contentContainer {
+    gap: calc(0px + (160 - 0) * ((100vw - 1100px) / (1400 - 1100))) !important;
+  }
+} @media (min-width: 1400px) {
+  .WORKPROJECTS_contentContainer {
+    gap: 160px;
+  }
+}
+
+.WORKPROJECTS_contentContainer {
+  /* background-color: purple; */
+  position: relative;
+  top: 16px;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.WORKPROJECTS_leftContentContainer {
+  /* background-color: purple; */
+  position: relative;
+  /* top: 20px; */
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.WORKPROJECTS_allProjectsContainer {
+  position: relative;
+  width: fit-content;
+  height: 380px;
+  overflow-y: auto;
+  border: solid white;
+  border-width: 1.5px;
+  border-radius: 8px;
+  padding: 10px;
+  width: 816px;
+}
+
+
 .WORKPROJECTS_projectRowContainer {
+  /* background-color: black; */
   display: flex;
   flex-direction: row;
   align-items: first baseline;
@@ -86,8 +151,7 @@
   gap: 25px;
   cursor: pointer;
   text-decoration: none;
-  width: 816px;
-  background-color: orange;
+  width: 760px;
 }
 
 .WORKPROJECTS_rowLeft {
@@ -146,12 +210,19 @@
 
   color: black;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 100;
 
   text-align: center;
   white-space: nowrap;
+
+  border: none;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
+
+.WORKPROJECTS_skillBox:hover {
+  background-color: black;
+}
+
 
 .horizontalLine {
   border: none; 
@@ -162,4 +233,38 @@
   position: relative;
   left: -122px;
   width: 815px;
+}
+
+
+/* MAINTAINING THE SKILLS CONTAINER */
+
+.WORKPROJECTS_uniqueSkillsContainer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:  center;
+  min-width: 128px;
+  max-width: 150px;
+
+  font-family: var(--font-news-cycle);
+  letter-spacing: var(--font-news-cycle-ls);
+}
+
+.WORKPROJECTS_projectSearchTitle {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 8px;
+
+}
+
+.WORKPROJECTS_skillsList {
+  width: fit-content;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
 }
