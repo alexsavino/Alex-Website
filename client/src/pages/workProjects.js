@@ -4,7 +4,10 @@ import './WorkProjects.css';
 const WorkProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sortOrder, setSortOrder] = useState('newestToOldest');
   const [skillCounts, setSkillCounts] = useState({});
+  const [activeSearchButton, setActiveSearchButton] = useState(null);
+  const [selectedSkills, setSelectedSkills] = useState([]);
 
   useEffect(() => {
     const updateHeight = () => {
@@ -20,22 +23,7 @@ const WorkProjects = () => {
         const response = await fetch('http://localhost:5001/api/data');
         const data = await response.json();
         setProjects(data);
-
-        const skillFrequency = {};
-        data.forEach(project => {
-          project.skills.forEach(skill => {
-            if (skillFrequency[skill]) {
-              skillFrequency[skill]++;
-            } else {
-              skillFrequency[skill] = 1;
-            }
-          });
-        });
-
-        const sortedSkills = Object.entries(skillFrequency)
-          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-
-        setSkillCounts(sortedSkills);
+        updateSkillCounts(data);
       } catch (error) {
         console.error('Error fetching projects:', error);
       } finally {
@@ -50,16 +38,44 @@ const WorkProjects = () => {
     };
   }, []);
 
+  const updateSkillCounts = (projects) => {
+    const counts = {};
+    projects.forEach(project => {
+      project.skills.forEach(skill => {
+        counts[skill] = (counts[skill] || 0) + 1;
+      });
+    });
+    setSkillCounts(counts);
+  };
+
+  const sortProjects = (projects) => {
+    return projects.sort((a, b) => {
+      if (sortOrder === 'oldestToNewest') {
+        return new Date(a.date) - new Date(b.date);
+      } else if (sortOrder === 'newestToOldest') {
+        return new Date(b.date) - new Date(a.date);
+      } else if (sortOrder === 'personalPriority') {
+        return a.priority - b.priority;
+      }
+    });
+  };
+
+  const filteredProjects = () => {
+    if (selectedSkills.length === 0) {
+      return projects;
+    }
+    return projects.filter(project =>
+      selectedSkills.every(skill => project.skills.includes(skill))
+    );
+  };
+
+  const sortedProjects = sortProjects([...filteredProjects()]);
+
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  //  COME BACK HERE!!!!
-  const handleProjectClick = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  /* TO FORMAT THE DATE */
+  // TO FORMAT THE DATE //
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -68,15 +84,37 @@ const WorkProjects = () => {
     return `${month}-${day}-${year}`;
   };
 
-  const ProjectSkills = ({ project }) => {
-    const handleSkillClick = (skill) => {
-      console.log(`Clicked on skill: ${skill}`);
-    };
+  // TO SORT PROJECTS APPROPRIATELY //
+  const handleSortButtonClick = (order) => {
+    setSortOrder(order);
+    setActiveSearchButton(order);
+  };
 
+  const handleSkillClick = (skill) => {
+    if (selectedSkills.includes(skill)) {
+      setSelectedSkills(selectedSkills.filter((s) => s !== skill));
+    } else {
+      setSelectedSkills([...selectedSkills, skill]);
+    }
+  };
+
+  const handleRightSkillButtonClick = (skill) => {
+    handleSkillClick(skill);
+  };
+
+  const handleSelectedSkillClick = (skill) => {
+    setSelectedSkills(selectedSkills.filter((s) => s !== skill));
+  };
+
+  const ProjectSkills = ({ project }) => {
     return (
       <div className="WORKPROJECTS_skillsContainer">
         {project.skills.map((skill, index) => (
-          <button key={index} className="WORKPROJECTS_skillBox" onClick={() => handleSkillClick(skill)}>
+          <button
+            key={index}
+            className={`WORKPROJECTS_skillBox ${selectedSkills.includes(skill) ? 'selected' : ''}`}
+            onClick={() => handleSkillClick(skill)}
+          >
             {skill}
           </button>
         ))}
@@ -94,31 +132,60 @@ const WorkProjects = () => {
       <div className="WORKPROJECTS_primaryRectangle">
         <div className="WORKPROJECTS_contentContainer">
           <div className="WORKPROJECTS_leftContentContainer">
-            
             <div className="WORKPROJECTS_searchButtonsContainer">
-              <button className="WORKPROJECTS_skillBox">Newest To Oldest</button>
-              <button className="WORKPROJECTS_skillBox">Oldest To Newest</button>
+              <button
+                className={`WORKPROJECTS_skillBox ${activeSearchButton === 'personalPriority' ? 'clicked' : ''}`}
+                onClick={() => handleSortButtonClick('personalPriority')}
+              >
+                Personal Priority
+              </button>
+              <button
+                className={`WORKPROJECTS_skillBox ${activeSearchButton === 'newestToOldest' ? 'clicked' : ''}`}
+                onClick={() => handleSortButtonClick('newestToOldest')}
+              >
+                Newest To Oldest
+              </button>
+              <button
+                className={`WORKPROJECTS_skillBox ${activeSearchButton === 'oldestToNewest' ? 'clicked' : ''}`}
+                onClick={() => handleSortButtonClick('oldestToNewest')}
+              >
+                Oldest To Newest
+              </button>
             </div>
 
             <div className="WORKPROJECTS_selectedSkills">
               <p>Selected Skills:</p>
+              <div className="WORKPROJECTS_selectedSkillsContainer">
+                {selectedSkills.map((skill) => (
+                  <button
+                    key={skill}
+                    className="WORKPROJECTS_skillBox"
+                    onClick={() => handleSelectedSkillClick(skill)}
+                  >
+                    {skill}
+                    <img src="x.png" alt="Remove" className="xImage"/>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="WORKPROJECTS_allProjectsContainer">
-              {projects.map((project) => (
+              {sortedProjects.map((project) => (
                 <div
                   key={project.id}
                   className="WORKPROJECTS_projectRowContainer"
-                  onClick={() => handleProjectClick(project.github_link)}>
-                  <p className="WORKPROJECTS_rowLeft">{formatDate(project.date)}</p>
+                >
+                  <a href={project.github_link} className="WORKPROJECTS_rowLeft">{formatDate(project.date)}</a>
                   <div className="WORKPROJECTS_rowRight">
-                    <p className="WORKPROJECTS_projectTitle">{project.title}</p>
-                    <ProjectSkills project={project} /> {/* Use the ProjectSkills component */}
-                    <p className="WORKPROJECTS_description">{project.description}</p>
-                    {project.associated_image && <img src={project.associated_image} alt={project.title} />}
+                    <a href={project.github_link} className="WORKPROJECTS_projectTitle">{project.title}</a>
+                    <ProjectSkills project={project} />
+                    <a href={project.github_link} className="WORKPROJECTS_description">{project.description}</a>
+                    {project.associated_image && (
+                      <img src={project.associated_image} alt={project.title} />
+                    )}
                     <hr className="horizontalLine" />
                   </div>
-                </div> 
+                </div>
               ))}
             </div>
           </div>
@@ -127,9 +194,16 @@ const WorkProjects = () => {
           <div className="WORKPROJECTS_uniqueSkillsContainer">
             <p className="WORKPROJECTS_projectSearchTitle">Search By Skill</p>
             <ul className="WORKPROJECTS_skillsList">
-              {skillCounts.map(([skill, count]) => (
+              {Object.entries(skillCounts).map(([skill, count]) => (
                 <li key={skill}>
-                  {skill} ({count})
+                  <button
+                    className={`WORKPROJECTS_rightSkillButton ${
+                      selectedSkills.includes(skill) ? 'selected' : ''
+                    }`}
+                    onClick={() => handleRightSkillButtonClick(skill)}
+                  >
+                    {skill} ({count})
+                  </button>
                 </li>
               ))}
             </ul>

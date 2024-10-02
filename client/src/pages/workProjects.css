@@ -3,6 +3,7 @@
 /* CONTACT ME MANILA LABEL */
 .WORKPROJECTS_pageContainer {
   position: relative;
+  min-width: 1168px;
   display: flex;
   flex-direction: column;
   height: calc(100px + var(--WORKPROJECTS-primary-rectangle-height) + 74px);
@@ -74,34 +75,57 @@
  }
 
 .WORKPROJECTS_selectedSkills {
+  /* background-color: orange; */
+  position: relative;
+  left: -10px;
+  
+  width: 100%; 
+  height: 23px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  
   color: white;
   font-family: var(--font-script);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: var(--font-script-ls);
+  margin-bottom: 16px;
+}
+
+.WORKPROJECTS_selectedSkillsContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.WORKPROJECTS_selectedSkillsContainer .WORKPROJECTS_skillBox {
+  margin-right: 7px;
+  display: flex;
+  flex-direction: row;
 }
 
 .WORKPROJECTS_selectedSkills p {
   margin: 0;
-  margin-bottom: 16px;
   position: relative;
-  left: -5px;
 }
 
 
 /* ACTUAL PROJECT CONTAINERS */
-@media (max-width: 1100px) {
+@media (max-width: 1168px) {
   .WORKPROJECTS_contentContainer {
-    gap: 0px !important;
+    width: 986px !important;
   }
 } 
-@media (min-width: 1101px) and (max-width: 1399px) {
+@media (min-width: 1169px) and (max-width: 1399px) {
   .WORKPROJECTS_contentContainer {
-    gap: calc(0px + (160 - 0) * ((100vw - 1100px) / (1400 - 1100))) !important;
+    width: calc(986px + (1090 - 986) * ((100vw - 1169px) / (1400 - 1169))) !important;
   }
 } @media (min-width: 1400px) {
   .WORKPROJECTS_contentContainer {
-    gap: 160px;
+    width: 1090px;
   }
 }
 
@@ -112,6 +136,8 @@
   
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  /* width: 1110px; */
 }
 
 .WORKPROJECTS_leftContentContainer {
@@ -126,13 +152,14 @@
 .WORKPROJECTS_allProjectsContainer {
   position: relative;
   width: fit-content;
-  height: 380px;
+  height: 375px;
   overflow-y: auto;
   border: solid white;
   border-width: 1.5px;
   border-radius: 8px;
   padding: 10px;
   width: 816px;
+
 }
 
 
@@ -147,6 +174,7 @@
   color: white;
   font-family: var(--font-news-cycle);
   letter-spacing: var(--font-news-cycle-ls);
+  text-decoration: none;
 
   gap: 25px;
   cursor: pointer;
@@ -154,10 +182,17 @@
   width: 760px;
 }
 
+
 .WORKPROJECTS_rowLeft {
   min-width: 80px;
   font-size: 20px;
   margin: 0px;
+
+  color: white;
+  font-family: var(--font-news-cycle);
+  letter-spacing: var(--font-news-cycle-ls);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out
 }
 
 .WORKPROJECTS_rowRight {
@@ -175,12 +210,31 @@
   font-size: 20px;
   font-weight: 700;
   margin: 0;
+
+  color: white;
+  font-family: var(--font-news-cycle);
+  letter-spacing: var(--font-news-cycle-ls);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out
 }
+
 .WORKPROJECTS_description {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
   margin: 0;
+
+  color: white;
+  font-family: var(--font-news-cycle);
+  letter-spacing: var(--font-news-cycle-ls);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out
+}
+
+.WORKPROJECTS_rowLeft:hover,
+.WORKPROJECTS_projectTitle:hover,
+.WORKPROJECTS_description:hover {
+  opacity: 0.5;
 }
 
 
@@ -216,11 +270,17 @@
   white-space: nowrap;
 
   border: none;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  transition: all 0.3s ease-in-out;
 }
 
-.WORKPROJECTS_skillBox:hover {
-  background-color: black;
+.WORKPROJECTS_skillBox:hover,
+.WORKPROJECTS_skillBox:active {
+  transform: scale(0.95);
+}
+
+.WORKPROJECTS_skillBox.clicked { 
+  transform: scale(0.95);
+  opacity: 0.5;
 }
 
 
@@ -242,7 +302,8 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content:  center;
+  justify-content: center;
+  align-items: center;
   min-width: 128px;
   max-width: 150px;
 
@@ -254,17 +315,37 @@
   font-size: 20px;
   margin: 0;
   margin-bottom: 8px;
-
 }
 
 .WORKPROJECTS_skillsList {
   width: fit-content;
-
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.5;
   list-style-type: none;
-
-  margin: 0;
   padding: 0;
+  margin: 0;
+}
+
+.WORKPROJECTS_rightSkillButton {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.5;
+
+  border: none;
+  background-color: inherit;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.WORKPROJECTS_rightSkillButton:hover,
+.WORKPROJECTS_rightSkillButton:active {
+  transform: scale(0.95);
+}
+
+.xImage {
+  background-size: 22px auto;
+  position: relative;
+  top: 2.5px;
+  width: 10px;
+  height: auto;
+  display: block;
+  margin-left: 2px;
 }
