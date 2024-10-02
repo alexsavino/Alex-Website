@@ -10,7 +10,7 @@ const WorkProjects = () => {
       const height = document.querySelector('.WORKPROJECTS_primaryRectangle')?.offsetHeight || 0;
       document.documentElement.style.setProperty('--WORKPROJECTS-primary-rectangle-height', `${height}px`);
     };
-   // dhdfghdgfhf
+
     updateHeight(); 
     window.addEventListener('resize', updateHeight);
     
@@ -62,8 +62,8 @@ const WorkProjects = () => {
           <div
             key={project.id}
             className="WORKPROJECTS_projectRowContainer"
-            onClick={() => handleProjectClick(project.github_link)}
-          >
+            onClick={() => handleProjectClick(project.github_link)}>
+
             <p className="WORKPROJECTS_rowLeft">{formatDate(project.date)}</p>
             <div className="WORKPROJECTS_rowRight">
               <p className="WORKPROJECTS_projectTitle">{project.title}</p>
@@ -79,9 +79,13 @@ const WorkProjects = () => {
 
               <p className="WORKPROJECTS_description">{project.description}</p>
               {project.associated_image && <img src={project.associated_image} alt={project.title} />}
+              
             </div>
-          </div>
+
+            <hr className="horizontalLine" />
+          </div> 
         ))}
+        
       </div>
     </div>
   );
