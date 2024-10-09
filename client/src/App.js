@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+// I AM DOING THIS PURELY FOR GITHUB!!!
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import DottedBackground from './generals/DottedGraph'; 
@@ -12,7 +13,7 @@ import ContactMe from './pages/ContactMe';
 import AboutMe from './pages/AboutMe';
 import WorkProjects from './pages/WorkProjects';
 import CreativeProjects from './pages/CreativeProjects';
-import TechnicalSkills from '.pages/TechnicalSkills'
+import TechnicalSkills from './pages/TechnicalSkills'
 import NotFound from './pages/NotFound';
 
 const App = () => {
