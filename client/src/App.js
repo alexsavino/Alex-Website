@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-// I AM DOING THIS PURELY FOR GITHUB!!!
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import DottedBackground from './generals/DottedGraph'; 
