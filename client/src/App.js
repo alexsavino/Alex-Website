@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DottedBackground from './generals/DottedGraph'; 
 // import NavBar from './generals/NavBar';
 import NavBarLayout from './generals/NavBarLayout';
-
+// jhbjhhjgjh
 import TitlePage from './pages/TitlePage';
 import ContactMe from './pages/ContactMe';
 import AboutMe from './pages/AboutMe';
