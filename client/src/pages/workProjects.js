@@ -176,7 +176,7 @@ const WorkProjects = () => {
                   className="WORKPROJECTS_projectRowContainer"
                 >
                   <a href={project.github_link} className="WORKPROJECTS_rowLeft">{formatDate(project.date)}</a>
-                  <div className="WORKPROJECTS_rowRight">
+                   <div className="WORKPROJECTS_rowRight">
                     <a href={project.github_link} className="WORKPROJECTS_projectTitle">{project.title}</a>
                     <ProjectSkills project={project} />
                     <a href={project.github_link} className="WORKPROJECTS_description">{project.description}</a>
